@@ -1,0 +1,34 @@
+{
+  "root": true,
+  "env": { "node": true },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "jsdoc",
+    "functional",
+    "promise",
+    "no-loops"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:jsdoc/recommended",
+    "plugin:promise/recommended"
+  ],
+  "rules": {
+    "no-console": "error",
+    "prettier/prettier": "warn",
+    "no-loops/no-loops": "error",
+    "@typescript-eslint/no-empty-function": "off"
+  }
+}
