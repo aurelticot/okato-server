@@ -51,6 +51,6 @@ export const typeDefs = gql`
 
   type Query {
     market(id: ID!): Market!
-    markets(sort: MarketSort, limit: Int!, page: Int!): Markets
+    markets(sort: MarketSort, limit: Int!, page: Int!): Markets!
   }
 `;
