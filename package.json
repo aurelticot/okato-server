@@ -2,6 +2,7 @@
   "name": "okato-server",
   "version": "0.1.0",
   "description": "Stock Echange trading sessions - Server side of the okato project",
+  "private": true,
   "main": "build/index.js",
   "scripts": {
     "clean:node_modules": "rm -rf node_modules/",
@@ -15,7 +16,7 @@
     "fix": "npm run format && npm run lint",
     "prebuild": "npm run clean:build",
     "build": "npm run check && tsc -p ./",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No test specified yet\" && exit 0",
     "start:dev": "nodemon --watch src --ext ts,js,json --exec 'ts-node -r dotenv/config --files src/index.ts'",
     "start:build": "node -r dotenv/config build/index.js",
     "start": "node build/index.js"
