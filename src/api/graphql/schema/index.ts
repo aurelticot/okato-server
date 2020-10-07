@@ -1,11 +1,11 @@
 import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
-  type TradingSession {
+  type MarketSession {
     date: String!
     startTime: String!
     endTime: String!
-    mainStatus: MarketMainStatus!
+    mainStatus: MarketStatus!
     status: MarketStatus!
   }
 
@@ -18,17 +18,12 @@ export const typeDefs = gql`
     longitude: Float!
     timezone: String!
     capitalisation: Float
-    sessions(startDate: String!, endDate: String!): [TradingSession!]!
+    sessions(startDate: String!, endDate: String!): [MarketSession!]!
   }
 
   type Markets {
     total: Int!
     result: [Market!]!
-  }
-
-  enum MarketMainStatus {
-    OPEN
-    CLOSE
   }
 
   enum MarketStatus {
@@ -40,7 +35,7 @@ export const typeDefs = gql`
     AFTER_MARKET
   }
 
-  enum MarketSort {
+  enum MarketSortingMethod {
     ALPHABETICALLY
     ALPHABETICALLY_REVERSE
     CAPITALISATION
@@ -51,6 +46,10 @@ export const typeDefs = gql`
 
   type Query {
     market(id: ID!): Market!
-    markets(sort: MarketSort, limit: Int!, page: Int!): Markets!
+    markets(
+      sort: MarketSortingMethod = CHRONOLOGICALLY
+      limit: Int!
+      page: Int!
+    ): Markets!
   }
 `;

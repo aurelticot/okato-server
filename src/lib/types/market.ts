@@ -8,10 +8,10 @@ export interface Market {
   timezoneOffset: number;
   longitude: number;
   capitalisation: number;
-  defaultSessions: DefaultTradingSession[];
+  defaultSessions: DefaultMarketSession[];
 }
 
-export interface DefaultTradingSession {
+export interface DefaultMarketSession {
   weekday: number;
   start: string;
   end: string;
