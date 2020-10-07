@@ -2,10 +2,10 @@ import { config } from "../../config";
 import cluster from "cluster";
 import winston, { createLogger, format, transports } from "winston";
 
-const isProduction = config.nodeEnv === "production";
+export const isProdLogger = config.nodeEnv === "production";
 const logLevel = config.logLevel
   ? config.logLevel
-  : isProduction
+  : isProdLogger
   ? "info"
   : "debug";
 
@@ -105,5 +105,5 @@ const getDevLogger = (name?: string): winston.Logger => {
 };
 
 export const getLogger = (name: string): winston.Logger => {
-  return isProduction ? getProdLogger(name) : getDevLogger(name);
+  return isProdLogger ? getProdLogger(name) : getDevLogger(name);
 };

@@ -1,4 +1,4 @@
-import { getLogger } from "../utils";
+import { getLogger, isProdLogger } from "../utils";
 const logger = getLogger("request");
 
 import { Request, Response, NextFunction, RequestHandler } from "express";
@@ -12,13 +12,12 @@ export const requestLogger = (): RequestHandler => {
     const query = req.query;
     const requestID = req.requestId || "";
 
-    logger.info(`Receiving request ${requestID} ${method}: ${url}`, {
-      requestID,
-      method,
-      url,
-      query,
-      params,
-    });
+    const requestLogMessage = `Receiving request ${requestID} ${method}: ${url}`;
+    const requestLogMetadata = isProdLogger
+      ? { requestID, method, url, query, params }
+      : { query, params };
+
+    logger.info(requestLogMessage, requestLogMetadata);
 
     onHeaders(res, () => {
       const responseRequestID = res.requestId || "";
@@ -38,18 +37,20 @@ export const requestLogger = (): RequestHandler => {
         : "";
       const status = res.statusCode;
 
-      logger.info(
-        `Responding request ${responseRequestID} ${method}: ${url} with status ${status}${formattedResponseTime}`,
-        {
-          requestID: responseRequestID,
-          method,
-          url,
-          query,
-          params,
-          status,
-          responseTime,
-        }
-      );
+      const responseLogMessage = `Responding request ${responseRequestID} ${method}: ${url} with status ${status}${formattedResponseTime}`;
+      const responseLogMetadata = isProdLogger
+        ? {
+            requestID: responseRequestID,
+            method,
+            url,
+            query,
+            params,
+            status,
+            responseTime,
+          }
+        : { query, params };
+
+      logger.info(responseLogMessage, responseLogMetadata);
     });
 
     next();
