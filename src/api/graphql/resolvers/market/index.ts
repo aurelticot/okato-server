@@ -1,5 +1,4 @@
 import merge from "lodash.merge";
-import find from "lodash.find";
 import { DateTime } from "luxon";
 import { IResolvers } from "apollo-server-express";
 import { NotFoundError } from "../../../../lib/errors";
@@ -77,18 +76,17 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
         const weekday = dateCursor.weekday;
         const formattedDay = dateCursor.toISODate();
 
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        const specialDay = find(
-          db.marketSpecialDays,
+        const specialDays = db.marketSpecialDays.filter(
           (marketSpecialDay: MarketSpecialDay) => {
             return (
               marketSpecialDay.market === market.id &&
               marketSpecialDay.date === formattedDay
             );
           }
-        ) as MarketSpecialDay | undefined;
+        );
 
-        const dateSessions = specialDay ? specialDay.sessions : defaultSessions;
+        const dateSessions =
+          specialDays.length > 0 ? specialDays[0].sessions : defaultSessions;
 
         const daySessions: MarketSessionData[] = dateSessions
           .filter((session) => session.weekday === weekday)

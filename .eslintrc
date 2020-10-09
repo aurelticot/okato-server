@@ -29,6 +29,7 @@
     "no-console": "warn",
     "prettier/prettier": "warn",
     "no-loops/no-loops": "error",
-    "@typescript-eslint/no-empty-function": "off"
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-unnecessary-type-assertion": "warn"
   }
 }
