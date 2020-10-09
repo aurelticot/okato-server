@@ -1,3 +1,5 @@
+import { Effectivity } from "./common";
+
 export interface Market {
   id: string;
   code: string;
@@ -8,14 +10,24 @@ export interface Market {
   timezoneOffset: number;
   longitude: number;
   capitalisation: number;
-  defaultSessions: DefaultMarketSession[];
 }
 
-export interface DefaultMarketSession {
+export interface MarketSession {
   weekday: number;
   start: string;
   end: string;
   status: MarketStatus;
+}
+
+export interface MarketDefaultSession extends MarketSession {
+  market: string;
+  effectivity: Effectivity;
+}
+
+export interface MarketSpecialDay {
+  market: string;
+  date: string;
+  sessions: MarketSession[];
 }
 
 export enum MarketStatus {

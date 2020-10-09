@@ -1,4 +1,4 @@
-import { Market, MarketStatus } from "../lib/types";
+import { Market } from "../lib/types";
 
 export const markets: Market[] = [
   {
@@ -11,38 +11,6 @@ export const markets: Market[] = [
     timezoneOffset: 10,
     longitude: 151.2099,
     capitalisation: 1320000000000,
-    defaultSessions: [
-      {
-        weekday: 1,
-        start: "10:00",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 2,
-        start: "10:00",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 3,
-        start: "10:00",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 4,
-        start: "10:00",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 5,
-        start: "10:00",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-    ],
   },
   {
     id: "EURONEXT",
@@ -54,38 +22,6 @@ export const markets: Market[] = [
     timezoneOffset: 2,
     longitude: 2.349014,
     capitalisation: 7330000000,
-    defaultSessions: [
-      {
-        weekday: 1,
-        start: "09:00",
-        end: "17:29",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 2,
-        start: "09:00",
-        end: "17:29",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 3,
-        start: "09:00",
-        end: "17:29",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 4,
-        start: "09:00",
-        end: "17:29",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 5,
-        start: "09:00",
-        end: "17:29",
-        status: MarketStatus.OPEN,
-      },
-    ],
   },
   {
     id: "NYSE",
@@ -97,38 +33,6 @@ export const markets: Market[] = [
     timezoneOffset: -4,
     longitude: -73.935242,
     capitalisation: 21040000000000,
-    defaultSessions: [
-      {
-        weekday: 1,
-        start: "09:30",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 2,
-        start: "09:30",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 3,
-        start: "09:30",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 4,
-        start: "09:30",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 5,
-        start: "09:30",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-    ],
   },
   {
     id: "NASDAQ",
@@ -140,38 +44,6 @@ export const markets: Market[] = [
     timezoneOffset: -4,
     longitude: -73.935242,
     capitalisation: 14650000000000,
-    defaultSessions: [
-      {
-        weekday: 1,
-        start: "09:30",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 2,
-        start: "09:30",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 3,
-        start: "09:30",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 4,
-        start: "09:30",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 5,
-        start: "09:30",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-    ],
   },
   {
     id: "HKEX",
@@ -183,98 +55,6 @@ export const markets: Market[] = [
     timezoneOffset: 8,
     longitude: 114.177216,
     capitalisation: 4890000000000,
-    defaultSessions: [
-      {
-        weekday: 1,
-        start: "09:30",
-        end: "11:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 1,
-        start: "12:00",
-        end: "12:59",
-        status: MarketStatus.BREAK,
-      },
-      {
-        weekday: 1,
-        start: "13:00",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 2,
-        start: "09:30",
-        end: "11:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 2,
-        start: "12:00",
-        end: "12:59",
-        status: MarketStatus.BREAK,
-      },
-      {
-        weekday: 2,
-        start: "13:00",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 3,
-        start: "09:30",
-        end: "11:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 3,
-        start: "12:00",
-        end: "12:59",
-        status: MarketStatus.BREAK,
-      },
-      {
-        weekday: 3,
-        start: "13:00",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 4,
-        start: "09:30",
-        end: "11:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 4,
-        start: "12:00",
-        end: "12:59",
-        status: MarketStatus.BREAK,
-      },
-      {
-        weekday: 4,
-        start: "13:00",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 5,
-        start: "09:30",
-        end: "11:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 5,
-        start: "12:00",
-        end: "12:59",
-        status: MarketStatus.BREAK,
-      },
-      {
-        weekday: 5,
-        start: "13:00",
-        end: "15:59",
-        status: MarketStatus.OPEN,
-      },
-    ],
   },
   {
     id: "SGX",
@@ -286,98 +66,6 @@ export const markets: Market[] = [
     timezoneOffset: 8,
     longitude: 103.851959,
     capitalisation: 585920000000,
-    defaultSessions: [
-      {
-        weekday: 1,
-        start: "09:00",
-        end: "11:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 1,
-        start: "12:00",
-        end: "12:59",
-        status: MarketStatus.BREAK,
-      },
-      {
-        weekday: 1,
-        start: "13:00",
-        end: "16:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 2,
-        start: "09:00",
-        end: "11:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 2,
-        start: "12:00",
-        end: "12:59",
-        status: MarketStatus.BREAK,
-      },
-      {
-        weekday: 2,
-        start: "13:00",
-        end: "16:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 3,
-        start: "09:00",
-        end: "11:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 3,
-        start: "12:00",
-        end: "12:59",
-        status: MarketStatus.BREAK,
-      },
-      {
-        weekday: 3,
-        start: "13:00",
-        end: "16:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 4,
-        start: "09:00",
-        end: "11:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 4,
-        start: "12:00",
-        end: "12:59",
-        status: MarketStatus.BREAK,
-      },
-      {
-        weekday: 4,
-        start: "13:00",
-        end: "16:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 5,
-        start: "09:00",
-        end: "11:59",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 5,
-        start: "12:00",
-        end: "12:59",
-        status: MarketStatus.BREAK,
-      },
-      {
-        weekday: 5,
-        start: "13:00",
-        end: "16:59",
-        status: MarketStatus.OPEN,
-      },
-    ],
   },
   {
     id: "LSE",
@@ -389,37 +77,5 @@ export const markets: Market[] = [
     timezoneOffset: 1,
     longitude: -0.118092,
     capitalisation: 3230000000000,
-    defaultSessions: [
-      {
-        weekday: 1,
-        start: "08:00",
-        end: "16:29",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 2,
-        start: "08:00",
-        end: "16:29",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 3,
-        start: "08:00",
-        end: "16:29",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 4,
-        start: "08:00",
-        end: "16:29",
-        status: MarketStatus.OPEN,
-      },
-      {
-        weekday: 5,
-        start: "08:00",
-        end: "16:29",
-        status: MarketStatus.OPEN,
-      },
-    ],
   },
 ];
