@@ -1,8 +1,14 @@
 import merge from "lodash.merge";
+import find from "lodash.find";
 import { DateTime } from "luxon";
 import { IResolvers } from "apollo-server-express";
 import { NotFoundError } from "../../../../lib/errors";
-import { GraphQLContext, Market } from "../../../../lib/types";
+import {
+  GraphQLContext,
+  Market,
+  MarketSpecialDay,
+  EffectivityStatus,
+} from "../../../../lib/types";
 import {
   getMarketSortingFunction,
   getMarketMainStatus,
@@ -47,11 +53,21 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
   Market: {
     sessions: (
       market,
-      { startDate, endDate }: MarketSessionsVariables
+      { startDate, endDate }: MarketSessionsVariables,
+      { db }
     ): MarketSessionData[] => {
-      const { defaultSessions } = market;
       const start = DateTime.fromISO(startDate).startOf("day");
       const end = DateTime.fromISO(endDate).endOf("day");
+
+      const defaultSessions = db.marketDefaultSessions.filter(
+        (marketDefaultSession) => {
+          return (
+            marketDefaultSession.effectivity.status ===
+              EffectivityStatus.ACTIVE &&
+            marketDefaultSession.market === market.id
+          );
+        }
+      );
 
       let returnedSessions: MarketSessionData[] = [];
 
@@ -61,7 +77,20 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
         const weekday = dateCursor.weekday;
         const formattedDay = dateCursor.toISODate();
 
-        const daySessions: MarketSessionData[] = defaultSessions
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        const specialDay = find(
+          db.marketSpecialDays,
+          (marketSpecialDay: MarketSpecialDay) => {
+            return (
+              marketSpecialDay.market === market.id &&
+              marketSpecialDay.date === formattedDay
+            );
+          }
+        ) as MarketSpecialDay | undefined;
+
+        const dateSessions = specialDay ? specialDay.sessions : defaultSessions;
+
+        const daySessions: MarketSessionData[] = dateSessions
           .filter((session) => session.weekday === weekday)
           .map((session) => {
             return {
