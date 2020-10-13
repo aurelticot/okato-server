@@ -1,7 +1,7 @@
 import merge from "lodash.merge";
 import { DateTime } from "luxon";
 import { IResolvers } from "apollo-server-express";
-import { NotFoundError } from "../../../../lib/errors";
+import { BadRequestError, NotFoundError } from "../../../../lib/errors";
 import {
   GraphQLContext,
   Market,
@@ -34,6 +34,13 @@ const rootResolvers: IResolvers<undefined, GraphQLContext> = {
       { limit, page, sort }: MarketsVariables,
       { db }
     ): MarketsData => {
+      if (limit < 1) {
+        throw new BadRequestError("The limit shall be greater than 0.");
+      }
+      if (page < 1) {
+        throw new BadRequestError("The page shall be greater than 0.");
+      }
+
       const total = db.markets.length;
       const startItem = limit * (page - 1);
       const endItem = startItem + limit;
@@ -55,8 +62,23 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
       { startDate, endDate }: MarketSessionsVariables,
       { db }
     ): MarketSessionData[] => {
-      const start = DateTime.fromISO(startDate).startOf("day");
-      const end = DateTime.fromISO(endDate).endOf("day");
+      const rawStartDate = DateTime.fromISO(startDate);
+      if (!rawStartDate.isValid) {
+        throw new BadRequestError("The sessions start date is not valid.");
+      }
+      const rawEndDate = DateTime.fromISO(endDate);
+      if (!rawEndDate.isValid) {
+        throw new BadRequestError("The sessions end date is not valid.");
+      }
+
+      const start = rawStartDate.startOf("day");
+      const end = rawEndDate.endOf("day");
+
+      if (end.diff(start).as("days") > 30) {
+        throw new BadRequestError(
+          "The range between the sessions start and end date must be less or equal to 30 days"
+        );
+      }
 
       const defaultSessions = db.marketDefaultSessions.filter(
         (marketDefaultSession) => {
