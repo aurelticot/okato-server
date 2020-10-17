@@ -13,6 +13,7 @@ import { connectDatabase } from "./database";
 
 export const createServer = (): {
   start: (port: number) => void;
+  close: () => void;
 } => {
   const app = express();
 
@@ -41,10 +42,15 @@ export const createServer = (): {
   const server = http.createServer(app);
 
   const start = (port: number) => {
+    logger.info(`Starting server...`);
     server.listen(port, () => {
       logger.info(`Server listenning on port: ${port}`);
     });
   };
 
-  return { start };
+  const close = () => {
+    server.close();
+  };
+
+  return { start, close };
 };
