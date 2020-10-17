@@ -20,7 +20,7 @@ const levelPads: { [key: string]: string } = {
 
 const formatProcessID = format((info) => {
   info.processID = cluster.isMaster
-    ? `master-${process.pid}`
+    ? `main-${process.pid}`
     : `worker-${process.pid}`;
   return info;
 });
