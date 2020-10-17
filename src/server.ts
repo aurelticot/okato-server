@@ -11,10 +11,8 @@ import { typeDefs, resolvers } from "./api/graphql";
 import { GraphQLContext } from "./lib/types";
 import { connectDatabase } from "./database";
 
-export const createServer = (): {
-  start: (port: number) => void;
-  close: () => void;
-} => {
+export const createServer = (): http.Server => {
+  logger.debug(`Configuring server...`);
   const app = express();
 
   //declare middleware
@@ -25,7 +23,9 @@ export const createServer = (): {
   app.use(bodyParser.json({ limit: "2mb" }));
   app.use(requestLogger());
 
+  logger.info("Connecting to database...");
   const db = connectDatabase();
+  logger.info("Database connected");
 
   // declare graphql API
   const graphqlServer = new ApolloServer({
@@ -35,22 +35,5 @@ export const createServer = (): {
   });
   graphqlServer.applyMiddleware({ app, path: "/api/graphql" });
 
-  // serve client
-  app.use(express.static(`${__dirname}/client`));
-  app.get("/*", (_req, res) => res.sendFile(`${__dirname}/client/index.html`));
-
-  const server = http.createServer(app);
-
-  const start = (port: number) => {
-    logger.info(`Starting server...`);
-    server.listen(port, () => {
-      logger.info(`Server listenning on port: ${port}`);
-    });
-  };
-
-  const close = () => {
-    server.close();
-  };
-
-  return { start, close };
+  return http.createServer(app);
 };

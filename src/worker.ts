@@ -1,45 +1,84 @@
 import { getLogger } from "./lib/utils";
 const logger = getLogger("app");
 
+import http from "http";
 import { config } from "./config";
 import { createServer } from "./server";
 
-const exitWorker = (code: number, server, timeout = 1000) => {
+const exitWorker = (code: number, server: http.Server, timeout = 1000) => {
+  logger.silly("worker.ts - enter #exitWorker()");
+  logger.info(`Cleaning worker process ${process.pid} before exit`);
+
+  // Ensure the process exit even if the cleaning fails
   setTimeout(() => {
-    logger.info(`Cannot stop server before exiting process`);
-    process.exit(code);
+    logger.warn(`Cannot stop server before exiting process`);
+    logger.info(`Exiting worker process ${process.pid}...`);
+    process.exit(code === 0 ? 1 : code);
   }, timeout).unref();
+
+  // Clean before exit
+  logger.info(`Stopping the server...`);
   server.close(() => {
-    logger.info(`Server stopped before exiting process`);
+    logger.info(`Server stopped successfully`);
+    logger.info(`Exiting worker process ${process.pid}...`);
     process.exit(code);
   });
 };
 
 export const run = (): void => {
-  logger.silly("worker.ts - enter Worker#run()");
-  logger.verbose(`Worker ${process.pid} is starting...`);
+  logger.silly("worker.ts - enter #run()");
+  logger.verbose(`Worker process ${process.pid} is starting...`);
 
+  const port = config.port;
   const server = createServer();
-  server.start(config.port);
+  logger.info(`Starting server...`);
+  server.listen(port, () => {
+    logger.info(`Server listenning on port: ${port}`);
+  });
+
+  let shutdownInProgress = false;
+
+  // ===== event listener declaration =====
+
+  const handleShutdown = (code: number): void => {
+    if (shutdownInProgress) {
+      logger.debug(
+        `Worker process ${process.pid} shutdown already in progress`
+      );
+      return;
+    }
+    shutdownInProgress = true;
+    exitWorker(code, server);
+  };
+
+  const handleSignal = (code: number, signal: NodeJS.Signals): void => {
+    logger.warn(`Worker process ${process.pid} received signal ${signal}`);
+    handleShutdown(code);
+  };
 
   process.on("exit", (code) => {
-    logger.warn(`Worker ${process.pid} exited with code ${code}`);
+    logger.info(`Worker process ${process.pid} exited with code ${code}`);
   });
 
-  process.on("SIGTERM", () => {
-    logger.warn(`Worker ${process.pid} received signal SIGTERM`);
-    exitWorker(0, server);
-  });
+  process.on("SIGTERM", () => handleSignal(0, "SIGTERM"));
+  process.on("SIGINT", () => handleSignal(0, "SIGINT"));
 
   process.on("uncaughtException", (error) => {
-    logger.error(`Uncaught Exception`, error);
-    exitWorker(1, server);
+    logger.error(
+      `Worker process ${process.pid} got an uncaught Exception`,
+      error
+    );
+    handleShutdown(1);
   });
 
   process.on("unhandledRejection", (reason, promise) => {
-    logger.error(`Unhandled Promise Rejection`, reason, promise);
-    exitWorker(1, server);
+    logger.error(
+      `Worker process ${process.pid} got an unhandled Promise Rejection`,
+      reason,
+      promise
+    );
+    handleShutdown(1);
   });
 
-  logger.verbose(`Worker ${process.pid} started`);
+  logger.info(`Worker process ${process.pid} started`);
 };
