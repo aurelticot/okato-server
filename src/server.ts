@@ -1,7 +1,8 @@
 import { getLogger } from "./lib/utils";
 const logger = getLogger("server");
 
-import express, { Express } from "express";
+import http from "http";
+import express from "express";
 import bodyParser from "body-parser";
 import helmet from "helmet";
 import { requestId, requestLogger, startAt } from "./lib/middlewares";
@@ -10,42 +11,40 @@ import { typeDefs, resolvers } from "./api/graphql";
 import { GraphQLContext } from "./lib/types";
 import { connectDatabase } from "./database";
 
-export default class Server {
-  private readonly port: number;
-  private readonly server: Express;
+export const Server = (): {
+  start: (port: number) => void;
+} => {
+  const app = express();
 
-  constructor(port: number) {
-    this.port = port;
-    this.server = express();
+  //declare middleware
+  app.use(startAt());
+  app.use(requestId());
+  app.use(helmet());
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json({ limit: "2mb" }));
+  app.use(requestLogger());
 
-    //declare middleware
-    this.server.use(startAt());
-    this.server.use(requestId());
-    this.server.use(helmet());
-    this.server.use(bodyParser.urlencoded({ extended: true }));
-    this.server.use(bodyParser.json({ limit: "2mb" }));
-    this.server.use(requestLogger());
+  const db = connectDatabase();
 
-    const db = connectDatabase();
+  // declare graphql API
+  const graphqlServer = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: ({ req, res }): GraphQLContext => ({ req, res, db }),
+  });
+  graphqlServer.applyMiddleware({ app, path: "/api/graphql" });
 
-    // declare graphql API
-    const apolloServer = new ApolloServer({
-      typeDefs,
-      resolvers,
-      context: ({ req, res }): GraphQLContext => ({ req, res, db }),
-    });
-    apolloServer.applyMiddleware({ app: this.server, path: "/api/graphql" });
+  // serve client
+  app.use(express.static(`${__dirname}/client`));
+  app.get("/*", (_req, res) => res.sendFile(`${__dirname}/client/index.html`));
 
-    // serve client
-    this.server.use(express.static(`${__dirname}/client`));
-    this.server.get("/*", (_req, res) =>
-      res.sendFile(`${__dirname}/client/index.html`)
-    );
-  }
+  const server = http.createServer(app);
 
-  start = (): void => {
-    this.server.listen(this.port, () => {
-      logger.info(`Server listenning on port: ${this.port}`);
+  const start = (port: number) => {
+    server.listen(port, () => {
+      logger.info(`Server listenning on port: ${port}`);
     });
   };
-}
+
+  return { start };
+};
