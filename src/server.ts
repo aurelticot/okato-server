@@ -11,7 +11,7 @@ import { typeDefs, resolvers } from "./api/graphql";
 import { GraphQLContext } from "./lib/types";
 import { connectDatabase } from "./database";
 
-export const Server = (): {
+export const createServer = (): {
   start: (port: number) => void;
 } => {
   const app = express();
