@@ -35,5 +35,8 @@ export const createServer = (): http.Server => {
   });
   graphqlServer.applyMiddleware({ app, path: "/api/graphql" });
 
+  // Health check route
+  app.get("/health", (_req, res) => res.status(200).send("ok"));
+
   return http.createServer(app);
 };
