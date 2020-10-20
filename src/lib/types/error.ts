@@ -1,0 +1,6 @@
+export enum ErrorCode {
+  NOT_IMPLEMENTED = "NOT_IMPLEMENTED",
+  NOT_FOUND = "NOT_FOUND",
+  UNKNOWN = "UNKONWN",
+  BAD_REQUEST = "BAD_REQUEST",
+}
