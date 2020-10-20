@@ -25,7 +25,7 @@ const rootResolvers: IResolvers<undefined, GraphQLContext> = {
     market: (_root, { id }: MarketVariables, { db }): Market => {
       const foundMarket = db.markets.find((market) => market.id === id);
       if (!foundMarket) {
-        throw new NotFoundError(`Market with id ${id} has not been found`);
+        throw new NotFoundError(`Market has not been found.`, { id });
       }
       return foundMarket;
     },
@@ -35,10 +35,14 @@ const rootResolvers: IResolvers<undefined, GraphQLContext> = {
       { db }
     ): MarketsData => {
       if (limit < 1) {
-        throw new BadRequestError("The limit shall be greater than 0.");
+        throw new BadRequestError("The limit shall be greater than 0.", {
+          limit,
+        });
       }
       if (page < 1) {
-        throw new BadRequestError("The page shall be greater than 0.");
+        throw new BadRequestError("The page shall be greater than 0.", {
+          page,
+        });
       }
 
       const total = db.markets.length;
@@ -64,11 +68,15 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
     ): MarketSessionData[] => {
       const rawStartDate = DateTime.fromISO(startDate);
       if (!rawStartDate.isValid) {
-        throw new BadRequestError("The sessions start date is not valid.");
+        throw new BadRequestError("The sessions start date is not valid.", {
+          startDate,
+        });
       }
       const rawEndDate = DateTime.fromISO(endDate);
       if (!rawEndDate.isValid) {
-        throw new BadRequestError("The sessions end date is not valid.");
+        throw new BadRequestError("The sessions end date is not valid.", {
+          endDate,
+        });
       }
 
       const start = rawStartDate.startOf("day");
@@ -76,7 +84,8 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
 
       if (end.diff(start).as("days") > 30) {
         throw new BadRequestError(
-          "The range between the sessions start and end date must be less or equal to 30 days"
+          "The range between the sessions start and end date must be less or equal to 30 days.",
+          { startDate, endDate }
         );
       }
 
