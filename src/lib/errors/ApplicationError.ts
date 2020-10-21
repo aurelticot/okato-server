@@ -5,7 +5,7 @@ export abstract class ApplicationError extends Error {
   readonly code: ErrorCode;
   readonly metadata?: any[];
 
-  constructor(code: ErrorCode, message: string, ...metadata: any[]) {
+  constructor(code: ErrorCode, message: string, metadata?: any[]) {
     super(message);
     this.code = code;
     this.metadata = metadata;
