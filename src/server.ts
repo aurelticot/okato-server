@@ -5,6 +5,7 @@ import http from "http";
 import express from "express";
 import bodyParser from "body-parser";
 import helmet from "helmet";
+import rateLimit from "express-rate-limit";
 import { requestId, requestLogger, startAt } from "./lib/middlewares";
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers, plugins, formatError } from "./api/graphql";
@@ -16,6 +17,13 @@ export const createServer = (): http.Server => {
   const app = express();
 
   //declare middleware
+  app.set("trust proxy", 1);
+  app.use(
+    rateLimit({
+      windowMs: 60 * 1000, // 1 minute
+      max: 5,
+    })
+  );
   app.use(startAt());
   app.use(requestId());
   app.use(helmet());
