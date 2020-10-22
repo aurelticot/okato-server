@@ -2,16 +2,16 @@
 import { FunctionalError } from "./FunctionalError";
 import { ErrorCode } from "../types";
 
-export class NotImplementedError extends FunctionalError {
+export class InvalidArgsError extends FunctionalError {
   constructor(
     message: string,
-    extension?: Record<string, any>,
+    invalidArgs?: Record<string, any>,
     metadata?: Record<string, any>
   ) {
     super(
-      ErrorCode.NOT_FOUND,
-      `Not Implemented Error: ${message}`,
-      extension,
+      ErrorCode.INVALID_ARGS,
+      `Invalid Arguments Error: ${message}`,
+      { invalidArgs },
       metadata
     );
   }
