@@ -7,7 +7,7 @@ import bodyParser from "body-parser";
 import helmet from "helmet";
 import { requestId, requestLogger, startAt } from "./lib/middlewares";
 import { ApolloServer } from "apollo-server-express";
-import { typeDefs, resolvers } from "./api/graphql";
+import { typeDefs, resolvers, plugins, formatError } from "./api/graphql";
 import { GraphQLContext } from "./lib/types";
 import { connectDatabase } from "./database";
 
@@ -32,6 +32,8 @@ export const createServer = (): http.Server => {
     typeDefs,
     resolvers,
     context: ({ req, res }): GraphQLContext => ({ req, res, db }),
+    plugins,
+    formatError,
   });
   graphqlServer.applyMiddleware({ app, path: "/api/graphql" });
 
