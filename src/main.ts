@@ -31,7 +31,7 @@ const shutdownWorkers = async (): Promise<boolean> => {
       .map((id) => cluster.workers[id])
       .filter((worker) => worker) as cluster.Worker[];
 
-    logger.debug(`Workers to shutdown: ${workers.length}`);
+    logger.verbose(`Workers to shutdown: ${workers.length}`);
 
     workers.forEach((worker) => {
       worker.on("exit", (code) => {
@@ -42,7 +42,7 @@ const shutdownWorkers = async (): Promise<boolean> => {
           cleanWorkersExit = false;
         }
       });
-      logger.debug(
+      logger.verbose(
         `Gracefully shutting down worker process ${worker.process.pid}...`
       );
       worker.kill();
@@ -51,17 +51,19 @@ const shutdownWorkers = async (): Promise<boolean> => {
     let nbWorkerAlive = 0;
 
     const checkWorkers = () => {
-      logger.debug(`Checking worker exit...`);
+      logger.verbose(`Checking worker exit...`);
       nbWorkerAlive = 0;
       workers.forEach((worker) => {
         if (worker.isDead()) {
-          logger.debug(`Worker process ${worker.process.pid} has exited`);
+          logger.verbose(`Worker process ${worker.process.pid} has exited`);
         } else {
-          logger.debug(`Worker process ${worker.process.pid} is still running`);
+          logger.verbose(
+            `Worker process ${worker.process.pid} is still running`
+          );
           ++nbWorkerAlive;
         }
       });
-      logger.debug(`Workers still running: ${nbWorkerAlive}`);
+      logger.verbose(`Workers still running: ${nbWorkerAlive}`);
       if (nbWorkerAlive === 0) {
         clearInterval(interval);
         return resolve(cleanWorkersExit);
@@ -101,13 +103,10 @@ export const run = (): void => {
   let shutdownInProgress = false;
   const concurrency = config.concurrency;
 
-  logger.debug(``);
-  logger.debug(`========================================`);
-  logger.debug(`NODE_ENV: ${config.nodeEnv}`);
-  logger.debug(`PORT: ${config.port}`);
-  logger.debug(`concurrency: ${concurrency}`);
-  logger.debug(`========================================`);
-  logger.debug(``);
+  logger.info(`Environment: ${config.environmentId}`);
+  logger.info(`NODE_ENV: ${config.nodeEnv}`);
+  logger.info(`PORT: ${config.port}`);
+  logger.info(`concurrency: ${concurrency}`);
 
   // ===== Workers management =====
 

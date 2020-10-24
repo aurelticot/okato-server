@@ -1,3 +1,6 @@
+import { getLogger } from "../../../../lib/utils";
+const logger = getLogger("graphql");
+
 import merge from "lodash.merge";
 import { DateTime } from "luxon";
 import { IResolvers } from "apollo-server-express";
@@ -25,18 +28,46 @@ import {
 
 const rootResolvers: IResolvers<undefined, GraphQLContext> = {
   Query: {
-    market: (_root, { id }: MarketVariables, { db }): Market => {
+    market: (_root, { id }: MarketVariables, { db, req }): Market => {
+      const profiler = logger.startTimer();
+      const { requestId } = req;
+      logger.verbose(`Starting GraphQL request resolver 'market'...`, {
+        requestId,
+        graphql: { resolver: "market" },
+      });
+
+      // -----------------------------------------------------------------------
+
+      logger.info(`Looking for market with id: ${id}`);
       const foundMarket = db.markets.find((market) => market.id === id);
       if (!foundMarket) {
+        logger.info(`Market with id ${id} not found`);
         throw new GraphQLNotFoundError(`Market has not been found.`, { id });
       }
+
+      // -----------------------------------------------------------------------
+
+      profiler.done({
+        message: `GraphQL request resolver 'market' done`,
+        requestId,
+        graphql: { resolver: "market" },
+      });
       return foundMarket;
     },
     markets: (
       _root,
       { limit, page, sort }: MarketsVariables,
-      { db }
+      { db, req }
     ): MarketsData => {
+      const profiler = logger.startTimer();
+      const { requestId } = req;
+      logger.verbose(`Starting GraphQL request resolver 'markets'...`, {
+        requestId,
+        graphql: { resolver: "markets" },
+      });
+
+      // -----------------------------------------------------------------------
+
       if (limit < 1) {
         throw new GraphQLInvalidArgsError(
           "The limit shall be greater than 0.",
@@ -57,6 +88,14 @@ const rootResolvers: IResolvers<undefined, GraphQLContext> = {
       const returnedMarkets = [...db.markets]
         .sort(getMarketSortingFunction(sort))
         .slice(startItem, endItem);
+
+      // -----------------------------------------------------------------------
+
+      profiler.done({
+        message: `GraphQL request resolver 'markets' done`,
+        requestId,
+        graphql: { resolver: "markets" },
+      });
       return {
         total,
         result: returnedMarkets,
@@ -70,8 +109,17 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
     sessions: (
       market,
       { startDate, endDate }: MarketSessionsVariables,
-      { db }
+      { db, req }
     ): MarketSessionData[] => {
+      const profiler = logger.startTimer();
+      const { requestId } = req;
+      logger.verbose(`Starting GraphQL request resolver 'Market.sessions'...`, {
+        requestId,
+        graphql: { resolver: "Market.sessions" },
+      });
+
+      // -----------------------------------------------------------------------
+
       const rawStartDate = DateTime.fromISO(startDate);
       if (!rawStartDate.isValid) {
         throw new GraphQLInvalidArgsError(
@@ -145,6 +193,13 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
         dateCursor = dateCursor.plus({ days: 1 });
       }
 
+      // -----------------------------------------------------------------------
+
+      profiler.done({
+        message: `GraphQL request resolver 'Market.sessions' done`,
+        requestId,
+        graphql: { resolver: "Market.sessions" },
+      });
       return returnedSessions;
     },
   },

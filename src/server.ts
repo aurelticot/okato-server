@@ -18,7 +18,7 @@ import { GraphQLContext } from "./lib/types";
 import { connectDatabase } from "./database";
 
 export const createServer = (): http.Server => {
-  logger.debug(`Configuring server...`);
+  logger.verbose(`Configuring server...`);
   const app = express();
 
   //declare middleware
