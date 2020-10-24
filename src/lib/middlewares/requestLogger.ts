@@ -11,11 +11,12 @@ export const requestLogger = (): RequestHandler => {
     const params = req.params;
     const query = req.query;
     const requestID = req.requestId || "";
+    const origin = req.headers.origin || "undefined";
 
     const requestLogMessage = `Receiving request ${requestID} ${method}: ${url}`;
     const requestLogMetadata = isProdLogger
-      ? { requestID, method, url, query, params }
-      : { query, params };
+      ? { requestID, origin, method, url, query, params }
+      : { origin, query, params };
 
     logger.info(requestLogMessage, requestLogMetadata);
 
