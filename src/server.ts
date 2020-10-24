@@ -6,7 +6,12 @@ import express from "express";
 import bodyParser from "body-parser";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
-import { requestId, requestLogger, startAt } from "./lib/middlewares";
+import {
+  corsMiddleware as cors,
+  requestId,
+  requestLogger,
+  startAt,
+} from "./lib/middlewares";
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers, plugins, formatError } from "./api/graphql";
 import { GraphQLContext } from "./lib/types";
@@ -24,6 +29,7 @@ export const createServer = (): http.Server => {
       max: 5,
     })
   );
+  app.use(cors());
   app.use(startAt());
   app.use(requestId());
   app.use(helmet());
