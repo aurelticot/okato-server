@@ -5,6 +5,8 @@ declare namespace NodeJS {
     NODE_ENV?: "production" | "development" | "test";
     ENVIRONMENT_ID?: string;
     LOG_LEVEL?: string;
-    ALLOWED_DOMAIN?: string;
+    ENABLE_RATE_LIMITE?: "true" | "false";
+    ENABLE_CORS?: "true" | "false";
+    ALLOWED_DOMAINS?: string;
   }
 }
