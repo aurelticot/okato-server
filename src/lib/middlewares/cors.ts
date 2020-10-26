@@ -14,7 +14,7 @@ const checkedOrigins =
 
 export const corsMiddleware = (): RequestHandler => {
   if (!enableCORS) {
-    logger.warn(`CORS disabled`);
+    logger.warn(`CORS is disabled`);
   } else if (allowedDomains.length === 0) {
     logger.warn(`CORS no domain allowed`);
   } else {
