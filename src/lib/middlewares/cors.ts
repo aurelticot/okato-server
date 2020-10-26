@@ -6,7 +6,7 @@ import cors from "cors";
 import { config } from "../../config";
 
 export const corsMiddleware = (): RequestHandler => {
-  const { allowedDomains, nodeEnv } = config;
+  const { enableCORS, allowedDomains, nodeEnv } = config;
   if (allowedDomains.length === 0) {
     logger.warn(`CORS no domain allowed`);
   } else {
@@ -20,7 +20,7 @@ export const corsMiddleware = (): RequestHandler => {
       : allowedDomains;
 
   return cors({
-    origin: checkedOrigins,
-    methods: ["GET", "HEAD", "POST", "DELETE"],
+    origin: enableCORS ? checkedOrigins : false,
+    methods: ["GET", "HEAD", "POST", "DELETE", "OPTIONS"],
   });
 };

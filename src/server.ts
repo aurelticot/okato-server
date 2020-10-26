@@ -1,6 +1,7 @@
 import { getLogger } from "./lib/utils";
 const logger = getLogger("server");
 
+import { config } from "./config";
 import http from "http";
 import express from "express";
 import bodyParser from "body-parser";
@@ -17,25 +18,29 @@ import { typeDefs, resolvers, plugins, formatError } from "./api/graphql";
 import { GraphQLContext } from "./lib/types";
 import { connectDatabase } from "./database";
 
+const { enableRateLimit } = config;
+
 export const createServer = (): http.Server => {
   logger.verbose(`Configuring server...`);
   const app = express();
 
   //declare middleware
   app.set("trust proxy", 1);
-  app.use(
-    rateLimit({
-      windowMs: 60 * 1000, // 1 minute
-      max: 5,
-    })
-  );
-  //app.use(cors());
+  if (enableRateLimit) {
+    app.use(
+      rateLimit({
+        windowMs: 60 * 1000, // 1 minute
+        max: 5,
+      })
+    );
+  }
   app.use(startAt());
   app.use(requestId());
   app.use(helmet());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json({ limit: "2mb" }));
   app.use(requestLogger());
+  app.use(cors());
 
   logger.info("Connecting to database...");
   const db = connectDatabase();
