@@ -27,13 +27,17 @@ export const createServer = (): http.Server => {
   //declare middleware
   app.set("trust proxy", 1);
   if (enableRateLimit) {
+    logger.info(`Rate limiting is enabled`);
     app.use(
       rateLimit({
         windowMs: 60 * 1000, // 1 minute
         max: 5,
       })
     );
+  } else {
+    logger.warn(`Rate limiting is disables`);
   }
+
   app.use(startAt());
   app.use(requestId());
   app.use(helmet());
