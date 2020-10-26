@@ -29,7 +29,7 @@ export const createServer = (): http.Server => {
       max: 5,
     })
   );
-  app.use(cors());
+  //app.use(cors());
   app.use(startAt());
   app.use(requestId());
   app.use(helmet());
