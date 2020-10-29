@@ -1,5 +1,8 @@
 import os from "os";
 
+const appName = process.env.npm_package_name;
+const appVersion = process.env.npm_package_version;
+
 const numCPUs = os.cpus().length;
 
 const port: number = process.env.PORT ? parseInt(process.env.PORT) : 9000;
@@ -24,7 +27,11 @@ const allowedDomains: RegExp[] = process.env.ALLOWED_DOMAINS
   ? process.env.ALLOWED_DOMAINS.split(",").map((domain) => new RegExp(domain))
   : [];
 
+const raygunAPIKey = process.env.RAYGUN_API_KEY;
+
 export const config = {
+  appName,
+  appVersion,
   concurrency,
   port,
   nodeEnv,
@@ -33,4 +40,5 @@ export const config = {
   enableRateLimit,
   enableCORS,
   allowedDomains,
+  raygunAPIKey,
 };

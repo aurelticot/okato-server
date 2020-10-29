@@ -1,5 +1,6 @@
 import { getLogger } from "./lib/utils";
 const logger = getLogger("server");
+import { crashReporter } from "./lib/utils";
 
 import { config } from "./config";
 import http from "http";
@@ -62,6 +63,9 @@ export const createServer = (): http.Server => {
 
   // Health check route
   app.get("/health", (_req, res) => res.status(200).send("ok"));
+
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  app.use(crashReporter.expressHandler);
 
   return http.createServer(app);
 };

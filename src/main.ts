@@ -1,8 +1,10 @@
 import { getLogger } from "./lib/utils";
 const logger = getLogger("app");
+import { crashReporter, CrashReporterTag } from "./lib/utils";
 
 import { config } from "./config";
 import cluster from "cluster";
+import { FunctionalError } from "./lib/errors";
 
 const createWorker = (): cluster.Worker => {
   logger.silly("main.ts - enter createWorker()");
@@ -152,7 +154,21 @@ export const run = (): void => {
       `Main process ${process.pid} got an uncaught Exception`,
       error
     );
-    handleShutdown(1);
+
+    const errorTypeTag =
+      error instanceof FunctionalError
+        ? CrashReporterTag.FUNCTIONAL
+        : CrashReporterTag.TECHNICAL;
+
+    crashReporter.send(
+      error,
+      {},
+      () => {
+        handleShutdown(1);
+      },
+      undefined,
+      [errorTypeTag, CrashReporterTag.UNHANDLED_EXCEPTION]
+    );
   });
 
   // Handle unhandled Promise rejection
@@ -162,7 +178,25 @@ export const run = (): void => {
       reason,
       promise
     );
-    handleShutdown(1);
+    const error: Error =
+      reason instanceof Error
+        ? reason
+        : new Error("Unhandled Promise Rejection");
+
+    const errorTypeTag =
+      error instanceof FunctionalError
+        ? CrashReporterTag.FUNCTIONAL
+        : CrashReporterTag.TECHNICAL;
+
+    crashReporter.send(
+      error,
+      { reason, promise },
+      () => {
+        handleShutdown(1);
+      },
+      undefined,
+      [errorTypeTag, CrashReporterTag.UNHANDLED_REJECTION]
+    );
   });
 
   logger.info(`Main process ${process.pid} started`);

@@ -1,5 +1,6 @@
 import { getLogger } from "../../../lib/utils";
 const logger = getLogger("graphql");
+import { crashReporter, CrashReporterTag } from "../../../lib/utils";
 
 import { GraphQLError, GraphQLFormattedError } from "graphql";
 import {
@@ -24,14 +25,30 @@ export const formatError = (error: GraphQLError): GraphQLFormattedError => {
       `Functional error unhandled before GraphQL response.`,
       error.originalError
     );
+    crashReporter.send(
+      new Error(`Functional error uncaught before GraphQL response.`),
+      { originalError },
+      () => {},
+      undefined,
+      [CrashReporterTag.FUNCTIONAL, CrashReporterTag.UNHANDLED_EXCEPTION]
+    );
+
     logger.verbose(`Sending the GraphQL-fromatted error to the client.`);
     return AppGraphQLError.createFromError(originalError);
   }
 
   logger.error(
-    `Technical or unkown error unhandled before GraphQL response.`,
-    error.originalError
+    `Technical or unkown error uncaught before GraphQL response.`,
+    originalError
   );
+  crashReporter.send(
+    new Error(`Technical or unkown error uncaught before GraphQL response.`),
+    { originalError },
+    () => {},
+    undefined,
+    [CrashReporterTag.TECHNICAL, CrashReporterTag.UNHANDLED_EXCEPTION]
+  );
+
   logger.warn("Sending a GraphQLInternalServerError to the client.");
   return new GraphQLInternalServerError();
 };
