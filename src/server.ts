@@ -36,7 +36,7 @@ export const createServer = (): http.Server => {
       })
     );
   } else {
-    logger.warn(`Rate limiting is disables`);
+    logger.warn(`Rate limiting is disabled`);
   }
 
   app.use(startAt());
