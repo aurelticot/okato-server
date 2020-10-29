@@ -8,5 +8,6 @@ declare namespace NodeJS {
     ENABLE_RATE_LIMITE?: "true" | "false";
     ENABLE_CORS?: "true" | "false";
     ALLOWED_DOMAINS?: string;
+    RAYGUN_API_KEY?: string;
   }
 }
