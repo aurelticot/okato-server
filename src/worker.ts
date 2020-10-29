@@ -1,9 +1,11 @@
 import { getLogger } from "./lib/utils";
 const logger = getLogger("app");
+import { crashReporter, CrashReporterTag } from "./lib/utils";
 
 import http from "http";
 import { config } from "./config";
 import { createServer } from "./server";
+import { FunctionalError } from "./lib/errors";
 
 const exitWorker = (code: number, server: http.Server, timeout = 1000) => {
   logger.silly("worker.ts - enter #exitWorker()");
@@ -68,7 +70,21 @@ export const run = (): void => {
       `Worker process ${process.pid} got an uncaught Exception`,
       error
     );
-    handleShutdown(1);
+
+    const errorTypeTag =
+      error instanceof FunctionalError
+        ? CrashReporterTag.FUNCTIONAL
+        : CrashReporterTag.TECHNICAL;
+
+    crashReporter.send(
+      error,
+      {},
+      () => {
+        handleShutdown(1);
+      },
+      undefined,
+      [errorTypeTag, CrashReporterTag.UNHANDLED_EXCEPTION]
+    );
   });
 
   process.on("unhandledRejection", (reason, promise) => {
@@ -77,7 +93,26 @@ export const run = (): void => {
       reason,
       promise
     );
-    handleShutdown(1);
+
+    const error: Error =
+      reason instanceof Error
+        ? reason
+        : new Error("Unhandled Promise Rejection");
+
+    const errorTypeTag =
+      error instanceof FunctionalError
+        ? CrashReporterTag.FUNCTIONAL
+        : CrashReporterTag.TECHNICAL;
+
+    crashReporter.send(
+      error,
+      { reason, promise },
+      () => {
+        handleShutdown(1);
+      },
+      undefined,
+      [errorTypeTag, CrashReporterTag.UNHANDLED_REJECTION]
+    );
   });
 
   logger.info(`Worker process ${process.pid} started`);

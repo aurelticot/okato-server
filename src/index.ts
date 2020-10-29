@@ -1,5 +1,5 @@
-require("trace");
-require("clarify");
+import "trace";
+import "clarify";
 
 import cluster from "cluster";
 import * as main from "./main";
