@@ -6,6 +6,7 @@ declare namespace NodeJS {
     ENVIRONMENT_ID?: string;
     LOG_LEVEL?: string;
     ENABLE_RATE_LIMITE?: "true" | "false";
+    RATE_LIMIT?: string;
     ENABLE_CORS?: "true" | "false";
     ALLOWED_DOMAINS?: string;
     RAYGUN_API_KEY?: string;

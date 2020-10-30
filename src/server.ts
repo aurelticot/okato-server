@@ -19,20 +19,21 @@ import { typeDefs, resolvers, plugins, formatError } from "./api/graphql";
 import { GraphQLContext } from "./lib/types";
 import { connectDatabase } from "./database";
 
-const { enableRateLimit } = config;
+const { enableRateLimit, rateLimitation } = config;
 
 export const createServer = (): http.Server => {
   logger.verbose(`Configuring server...`);
   const app = express();
 
   //declare middleware
+
   app.set("trust proxy", 1);
   if (enableRateLimit) {
     logger.info(`Rate limiting is enabled`);
     app.use(
       rateLimit({
-        windowMs: 60 * 1000, // 1 minute
-        max: 5,
+        windowMs: 60 * 1000,
+        max: rateLimitation,
       })
     );
   } else {
