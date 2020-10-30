@@ -105,6 +105,8 @@ export const run = (): void => {
   let shutdownInProgress = false;
   const concurrency = config.concurrency;
 
+  logger.info(`Application name: ${config.appName}`);
+  logger.info(`Application version: ${config.appVersion}`);
   logger.info(`Environment: ${config.environmentId}`);
   logger.info(`NODE_ENV: ${config.nodeEnv}`);
   logger.info(`PORT: ${config.port}`);

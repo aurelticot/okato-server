@@ -1,7 +1,7 @@
 import os from "os";
 
-const appName = process.env.npm_package_name;
-const appVersion = process.env.npm_package_version;
+const appName: string = process.env.npm_package_name || "undefined";
+const appVersion: string = process.env.npm_package_version || "undefined";
 
 const numCPUs = os.cpus().length;
 
@@ -18,10 +18,9 @@ const environmentId: string = process.env.ENVIRONMENT_ID || "unknown";
 
 const logLevel: string | undefined = process.env.LOG_LEVEL;
 
-const enableRateLimit: boolean =
-  process.env.ENABLE_RATE_LIMITE === "false" ? false : true;
+const enableRateLimit = !(process.env.ENABLE_RATE_LIMITE === "false");
 
-const enableCORS: boolean = process.env.ENABLE_CORS === "false" ? false : true;
+const enableCORS = !(process.env.ENABLE_CORS === "false");
 
 const allowedDomains: RegExp[] = process.env.ALLOWED_DOMAINS
   ? process.env.ALLOWED_DOMAINS.split(",").map((domain) => new RegExp(domain))
