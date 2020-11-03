@@ -8,6 +8,7 @@ export interface MarketsVariables {
   sort: MarketSort;
   limit: number;
   page: number;
+  selection: string[];
 }
 
 export interface MarketsData {

@@ -56,7 +56,7 @@ const rootResolvers: IResolvers<undefined, GraphQLContext> = {
     },
     markets: (
       _root,
-      { limit, page, sort }: MarketsVariables,
+      { limit, page, sort, selection = [] }: MarketsVariables,
       { db, req }
     ): MarketsData => {
       const profiler = logger.startTimer();
@@ -86,6 +86,9 @@ const rootResolvers: IResolvers<undefined, GraphQLContext> = {
       const startItem = limit * (page - 1);
       const endItem = startItem + limit;
       const returnedMarkets = [...db.markets]
+        .filter(
+          (market) => selection.length === 0 || selection.includes(market.id)
+        )
         .sort(getMarketSortingFunction(sort))
         .slice(startItem, endItem);
 

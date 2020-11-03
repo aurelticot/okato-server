@@ -50,6 +50,7 @@ export const typeDefs = gql`
       sort: MarketSortingMethod = CHRONOLOGICALLY
       limit: Int!
       page: Int!
+      selection: [ID!]
     ): Markets!
   }
 `;
