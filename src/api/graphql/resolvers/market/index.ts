@@ -82,15 +82,15 @@ const rootResolvers: IResolvers<undefined, GraphQLContext> = {
         });
       }
 
-      const total = db.markets.length;
       const startItem = limit * (page - 1);
       const endItem = startItem + limit;
-      const returnedMarkets = [...db.markets]
-        .filter(
-          (market) => selection.length === 0 || selection.includes(market.id)
-        )
+      const filteredMarkets = [...db.markets].filter(
+        (market) => selection.length === 0 || selection.includes(market.id)
+      );
+      const returnedMarkets = filteredMarkets
         .sort(getMarketSortingFunction(sort))
         .slice(startItem, endItem);
+      const total = filteredMarkets.length;
 
       // -----------------------------------------------------------------------
 
