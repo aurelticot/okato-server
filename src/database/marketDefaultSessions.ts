@@ -9,7 +9,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "ASX",
     weekday: 1,
     start: "10:00",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -20,7 +20,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "ASX",
     weekday: 2,
     start: "10:00",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -31,7 +31,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "ASX",
     weekday: 3,
     start: "10:00",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -42,7 +42,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "ASX",
     weekday: 4,
     start: "10:00",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -53,7 +53,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "ASX",
     weekday: 5,
     start: "10:00",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -64,7 +64,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "EURONEXT",
     weekday: 1,
     start: "09:00",
-    end: "17:29",
+    end: "17:30",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -75,7 +75,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "EURONEXT",
     weekday: 2,
     start: "09:00",
-    end: "17:29",
+    end: "17:30",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -86,7 +86,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "EURONEXT",
     weekday: 3,
     start: "09:00",
-    end: "17:29",
+    end: "17:30",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -97,7 +97,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "EURONEXT",
     weekday: 4,
     start: "09:00",
-    end: "17:29",
+    end: "17:30",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -108,7 +108,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "EURONEXT",
     weekday: 5,
     start: "09:00",
-    end: "17:29",
+    end: "17:30",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -120,7 +120,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "NYSE",
     weekday: 1,
     start: "09:30",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -131,7 +131,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "NYSE",
     weekday: 2,
     start: "09:30",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -142,7 +142,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "NYSE",
     weekday: 3,
     start: "09:30",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -153,7 +153,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "NYSE",
     weekday: 4,
     start: "09:30",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -164,7 +164,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "NYSE",
     weekday: 5,
     start: "09:30",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -176,7 +176,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "NASDAQ",
     weekday: 1,
     start: "09:30",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -187,7 +187,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "NASDAQ",
     weekday: 2,
     start: "09:30",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -198,7 +198,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "NASDAQ",
     weekday: 3,
     start: "09:30",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -209,7 +209,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "NASDAQ",
     weekday: 4,
     start: "09:30",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -220,7 +220,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "NASDAQ",
     weekday: 5,
     start: "09:30",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -231,7 +231,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 1,
     start: "09:30",
-    end: "11:59",
+    end: "12:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -242,7 +242,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 1,
     start: "12:00",
-    end: "12:59",
+    end: "13:00",
     status: MarketStatus.BREAK,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -253,7 +253,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 1,
     start: "13:00",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -264,7 +264,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 2,
     start: "09:30",
-    end: "11:59",
+    end: "12:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -275,7 +275,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 2,
     start: "12:00",
-    end: "12:59",
+    end: "13:00",
     status: MarketStatus.BREAK,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -286,7 +286,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 2,
     start: "13:00",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -297,7 +297,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 3,
     start: "09:30",
-    end: "11:59",
+    end: "12:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -308,7 +308,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 3,
     start: "12:00",
-    end: "12:59",
+    end: "13:00",
     status: MarketStatus.BREAK,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -319,7 +319,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 3,
     start: "13:00",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -330,7 +330,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 4,
     start: "09:30",
-    end: "11:59",
+    end: "12:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -341,7 +341,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 4,
     start: "12:00",
-    end: "12:59",
+    end: "13:00",
     status: MarketStatus.BREAK,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -352,7 +352,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 4,
     start: "13:00",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -363,7 +363,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 5,
     start: "09:30",
-    end: "11:59",
+    end: "12:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -374,7 +374,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 5,
     start: "12:00",
-    end: "12:59",
+    end: "13:00",
     status: MarketStatus.BREAK,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -385,7 +385,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "HKEX",
     weekday: 5,
     start: "13:00",
-    end: "15:59",
+    end: "16:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -396,7 +396,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 1,
     start: "09:00",
-    end: "11:59",
+    end: "12:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -407,7 +407,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 1,
     start: "12:00",
-    end: "12:59",
+    end: "13:00",
     status: MarketStatus.BREAK,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -418,7 +418,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 1,
     start: "13:00",
-    end: "16:59",
+    end: "17:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -429,7 +429,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 2,
     start: "09:00",
-    end: "11:59",
+    end: "12:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -440,7 +440,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 2,
     start: "12:00",
-    end: "12:59",
+    end: "13:00",
     status: MarketStatus.BREAK,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -451,7 +451,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 2,
     start: "13:00",
-    end: "16:59",
+    end: "17:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -462,7 +462,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 3,
     start: "09:00",
-    end: "11:59",
+    end: "12:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -473,7 +473,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 3,
     start: "12:00",
-    end: "12:59",
+    end: "13:00",
     status: MarketStatus.BREAK,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -484,7 +484,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 3,
     start: "13:00",
-    end: "16:59",
+    end: "17:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -495,7 +495,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 4,
     start: "09:00",
-    end: "11:59",
+    end: "12:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -506,7 +506,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 4,
     start: "12:00",
-    end: "12:59",
+    end: "13:00",
     status: MarketStatus.BREAK,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -517,7 +517,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 4,
     start: "13:00",
-    end: "16:59",
+    end: "17:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -528,7 +528,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 5,
     start: "09:00",
-    end: "11:59",
+    end: "12:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -539,7 +539,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 5,
     start: "12:00",
-    end: "12:59",
+    end: "13:00",
     status: MarketStatus.BREAK,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -550,7 +550,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "SGX",
     weekday: 5,
     start: "13:00",
-    end: "16:59",
+    end: "17:00",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -561,7 +561,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "LSE",
     weekday: 1,
     start: "08:00",
-    end: "16:29",
+    end: "16:30",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -572,7 +572,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "LSE",
     weekday: 2,
     start: "08:00",
-    end: "16:29",
+    end: "16:30",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -583,7 +583,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "LSE",
     weekday: 3,
     start: "08:00",
-    end: "16:29",
+    end: "16:30",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -594,7 +594,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "LSE",
     weekday: 4,
     start: "08:00",
-    end: "16:29",
+    end: "16:30",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,
@@ -605,7 +605,7 @@ export const marketDefaultSessions: MarketDefaultSession[] = [
     market: "LSE",
     weekday: 5,
     start: "08:00",
-    end: "16:29",
+    end: "16:30",
     status: MarketStatus.OPEN,
     effectivity: {
       status: EffectivityStatus.ACTIVE,

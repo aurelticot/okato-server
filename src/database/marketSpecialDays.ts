@@ -8,7 +8,7 @@ export const marketSpecialDays: MarketSpecialDay[] = [
       {
         weekday: 5,
         start: "10:00",
-        end: "15:59",
+        end: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
