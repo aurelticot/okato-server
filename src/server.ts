@@ -5,6 +5,7 @@ import { crashReporter } from "./lib/utils";
 import { config } from "./config";
 import http from "http";
 import express from "express";
+import enforce from "express-sslify";
 import bodyParser from "body-parser";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
@@ -43,6 +44,9 @@ export const createServer = (): http.Server => {
   app.use(startAt());
   app.use(requestId());
   app.use(helmet());
+  if (config.nodeEnv === "production") {
+    app.use(enforce.HTTPS({ trustProtoHeader: true }));
+  }
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json({ limit: "2mb" }));
   app.use(requestLogger());
