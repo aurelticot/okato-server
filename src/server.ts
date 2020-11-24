@@ -46,6 +46,7 @@ export const createServer = (): http.Server => {
   app.use(helmet());
   if (config.nodeEnv === "production") {
     app.use(enforce.HTTPS({ trustProtoHeader: true }));
+    logger.info(`HTTPS is enforced for all requests`);
   }
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json({ limit: "2mb" }));
