@@ -27,4 +27,5 @@ export interface MarketSessionData {
   endTime: string;
   mainStatus: MarketStatus;
   status: MarketStatus;
+  reason?: string;
 }

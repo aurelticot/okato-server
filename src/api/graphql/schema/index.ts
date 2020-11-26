@@ -7,17 +7,22 @@ export const typeDefs = gql`
     endTime: String!
     mainStatus: MarketStatus!
     status: MarketStatus!
+    reason: String
   }
 
   type Market {
     id: ID!
-    code: String!
+    mic: String!
+    shortName: String!
     name: String!
+    currency: String!
     city: String!
     country: String!
+    latitude: Float!
     longitude: Float!
     timezone: String!
     capitalisation: Float
+    website: String
     sessions(startDate: String!, endDate: String!): [MarketSession!]!
   }
 

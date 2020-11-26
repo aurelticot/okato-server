@@ -167,7 +167,7 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
         const weekday = dateCursor.weekday;
         const formattedDay = dateCursor.toISODate();
 
-        const specialDays = db.marketSpecialDays.filter(
+        const specialDay = db.marketSpecialDays.filter(
           (marketSpecialDay: MarketSpecialDay) => {
             return (
               marketSpecialDay.market === market.id &&
@@ -176,22 +176,31 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
           }
         );
 
-        const dateSessions =
-          specialDays.length > 0 ? specialDays[0].sessions : defaultSessions;
-
-        const daySessions: MarketSessionData[] = dateSessions
-          .filter((session) => session.weekday === weekday)
-          .map((session) => {
-            return {
+        // TODO Try to find a cleaner way of the following
+        if (specialDay.length > 0) {
+          const daySessions: MarketSessionData[] = specialDay[0].sessions.map(
+            (session) => ({
               date: formattedDay,
               startTime: session.start,
               endTime: session.end,
               status: session.status,
               mainStatus: getMarketMainStatus(session.status),
-            };
-          });
-
-        returnedSessions = [...returnedSessions, ...daySessions];
+              reason: specialDay[0].reason,
+            })
+          );
+          returnedSessions = [...returnedSessions, ...daySessions];
+        } else {
+          const daySessions: MarketSessionData[] = defaultSessions
+            .filter((session) => session.weekday === weekday)
+            .map((session) => ({
+              date: formattedDay,
+              startTime: session.start,
+              endTime: session.end,
+              status: session.status,
+              mainStatus: getMarketMainStatus(session.status),
+            }));
+          returnedSessions = [...returnedSessions, ...daySessions];
+        }
 
         dateCursor = dateCursor.plus({ days: 1 });
       }
