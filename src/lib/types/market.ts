@@ -2,18 +2,24 @@ import { Effectivity } from "./common";
 
 export interface Market {
   id: string;
-  code: string;
+  mic: string;
+  shortName: string;
   name: string;
+  currency: string;
   city: string;
   country: string;
-  timezone: string;
-  timezoneOffset: number;
+  latitude: number;
   longitude: number;
+  timezone: string;
   capitalisation: number;
+  website: string;
 }
 
-export interface MarketSession {
+export interface MarketSession extends MarketSessionDetail {
   weekday: number;
+}
+
+export interface MarketSessionDetail {
   start: string;
   end: string;
   status: MarketStatus;
@@ -25,9 +31,10 @@ export interface MarketDefaultSession extends MarketSession {
 }
 
 export interface MarketSpecialDay {
+  reason: string;
   market: string;
   date: string;
-  sessions: MarketSession[];
+  sessions: MarketSessionDetail[];
 }
 
 export enum MarketStatus {
