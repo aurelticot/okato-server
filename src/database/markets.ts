@@ -88,7 +88,7 @@ export const markets: Market[] = [
   {
     id: "XAMS",
     mic: "XAMS",
-    shortName: "Euronext Amsterdam",
+    shortName: "XAMS",
     name: "Euronext Amsterdam",
     currency: "EUR",
     city: "Amsterdam",
@@ -200,7 +200,7 @@ export const markets: Market[] = [
   {
     id: "XPAR",
     mic: "XPAR",
-    shortName: "Euronext Paris",
+    shortName: "XPAR",
     name: "Euronext Paris",
     currency: "EUR",
     city: "Paris",
@@ -214,7 +214,7 @@ export const markets: Market[] = [
   {
     id: "XBRU",
     mic: "XBRU",
-    shortName: "Euronext Brussels",
+    shortName: "XBRU",
     name: "Euronext Brussels",
     currency: "EUR",
     city: "Brussels",
@@ -228,7 +228,7 @@ export const markets: Market[] = [
   {
     id: "XLIS",
     mic: "XLIS",
-    shortName: "Euronext Lisbon",
+    shortName: "XLIS",
     name: "Euronext Lisbon",
     currency: "EUR",
     city: "Lisbon",
