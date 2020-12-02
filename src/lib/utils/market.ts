@@ -4,7 +4,7 @@ export const sortMarketAlphabetically = (
   marketA: Market,
   marketB: Market
 ): number => {
-  return marketA.name.localeCompare(marketB.name);
+  return marketA.shortName.localeCompare(marketB.shortName);
 };
 
 export const sortMarketAlphabeticallyReverse = (
