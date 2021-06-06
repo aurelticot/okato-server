@@ -1,6 +1,6 @@
 {
   "name": "okato-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stock Echange trading sessions - Server side of the okato project",
   "private": true,
   "main": "build/index.js",
