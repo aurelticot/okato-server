@@ -2,9 +2,8 @@ import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
   type MarketSession {
-    date: String!
-    startTime: String!
-    endTime: String!
+    start: String!
+    end: String!
     mainStatus: MarketStatus!
     status: MarketStatus!
     reason: String

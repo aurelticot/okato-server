@@ -4,11 +4,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Thanksgiving Day",
-    date: "2020-11-26",
+    localDate: "2020-11-26",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -16,16 +16,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Thanksgiving Day",
-    date: "2020-11-27",
+    localDate: "2020-11-27",
     sessions: [
       {
-        start: "09:30",
-        end: "13:00",
+        localStartTime: "09:30",
+        localEndTime: "13:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "13:00",
-        end: "16:00",
+        localStartTime: "13:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -33,16 +33,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:30",
-        end: "13:00",
+        localStartTime: "09:30",
+        localEndTime: "13:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "13:00",
-        end: "16:00",
+        localStartTime: "13:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -50,11 +50,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -62,11 +62,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -74,11 +74,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Martin Luther King, Jr's birthday",
-    date: "2021-01-18",
+    localDate: "2021-01-18",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -86,11 +86,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Washington's birthday",
-    date: "2021-02-15",
+    localDate: "2021-02-15",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -98,11 +98,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -110,11 +110,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Memorial Day",
-    date: "2021-05-31",
+    localDate: "2021-05-31",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -122,11 +122,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Independence Day",
-    date: "2021-07-05",
+    localDate: "2021-07-05",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -134,11 +134,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Labor Day",
-    date: "2021-09-06",
+    localDate: "2021-09-06",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -146,16 +146,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Thanksgiving Day",
-    date: "2021-11-25",
+    localDate: "2021-11-25",
     sessions: [
       {
-        start: "09:30",
-        end: "13:00",
+        localStartTime: "09:30",
+        localEndTime: "13:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "13:00",
-        end: "16:00",
+        localStartTime: "13:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -163,11 +163,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Thanksgiving Day",
-    date: "2021-11-26",
+    localDate: "2021-11-26",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -175,11 +175,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNYS",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -187,11 +187,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Thanksgiving Day",
-    date: "2020-11-26",
+    localDate: "2020-11-26",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -199,16 +199,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Thanksgiving Day",
-    date: "2020-11-27",
+    localDate: "2020-11-27",
     sessions: [
       {
-        start: "09:30",
-        end: "13:00",
+        localStartTime: "09:30",
+        localEndTime: "13:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "13:00",
-        end: "16:00",
+        localStartTime: "13:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -216,16 +216,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:30",
-        end: "13:00",
+        localStartTime: "09:30",
+        localEndTime: "13:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "13:00",
-        end: "16:00",
+        localStartTime: "13:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -233,11 +233,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -245,11 +245,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -257,11 +257,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Martin Luther King, Jr's birthday",
-    date: "2021-01-18",
+    localDate: "2021-01-18",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -269,11 +269,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Washington's birthday",
-    date: "2021-02-15",
+    localDate: "2021-02-15",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -281,11 +281,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -293,11 +293,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Memorial Day",
-    date: "2021-05-31",
+    localDate: "2021-05-31",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -305,11 +305,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Independence Day",
-    date: "2021-07-05",
+    localDate: "2021-07-05",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -317,11 +317,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Labor Day",
-    date: "2021-09-06",
+    localDate: "2021-09-06",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -329,11 +329,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Thanksgiving Day",
-    date: "2021-11-25",
+    localDate: "2021-11-25",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -341,16 +341,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Thanksgiving Day",
-    date: "2021-11-26",
+    localDate: "2021-11-26",
     sessions: [
       {
-        start: "09:30",
-        end: "13:00",
+        localStartTime: "09:30",
+        localEndTime: "13:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "13:00",
-        end: "16:00",
+        localStartTime: "13:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -358,11 +358,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNAS",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -370,16 +370,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "08:00",
-        end: "12:30",
+        localStartTime: "08:00",
+        localEndTime: "12:30",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:30",
-        end: "16:30",
+        localStartTime: "12:30",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -387,11 +387,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "08:00",
-        end: "16:30",
+        localStartTime: "08:00",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -399,11 +399,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "Boxing Day",
-    date: "2020-12-28",
+    localDate: "2020-12-28",
     sessions: [
       {
-        start: "08:00",
-        end: "16:30",
+        localStartTime: "08:00",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -411,16 +411,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "08:00",
-        end: "12:30",
+        localStartTime: "08:00",
+        localEndTime: "12:30",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:30",
-        end: "16:30",
+        localStartTime: "12:30",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -428,11 +428,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "08:00",
-        end: "16:30",
+        localStartTime: "08:00",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -440,11 +440,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "08:00",
-        end: "16:30",
+        localStartTime: "08:00",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -452,11 +452,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "Easter Day",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "08:00",
-        end: "16:30",
+        localStartTime: "08:00",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -464,11 +464,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "Bank Holiday",
-    date: "2021-05-03",
+    localDate: "2021-05-03",
     sessions: [
       {
-        start: "08:00",
-        end: "16:30",
+        localStartTime: "08:00",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -476,11 +476,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "Bank Holiday",
-    date: "2021-05-31",
+    localDate: "2021-05-31",
     sessions: [
       {
-        start: "08:00",
-        end: "16:30",
+        localStartTime: "08:00",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -488,11 +488,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "Bank Holiday",
-    date: "2021-08-02",
+    localDate: "2021-08-02",
     sessions: [
       {
-        start: "08:00",
-        end: "16:30",
+        localStartTime: "08:00",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -500,16 +500,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "08:00",
-        end: "12:30",
+        localStartTime: "08:00",
+        localEndTime: "12:30",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:30",
-        end: "16:30",
+        localStartTime: "12:30",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -517,16 +517,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLON",
     reason: "New Year's Day",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "08:00",
-        end: "12:30",
+        localStartTime: "08:00",
+        localEndTime: "12:30",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:30",
-        end: "16:30",
+        localStartTime: "12:30",
+        localEndTime: "16:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -534,11 +534,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Worker's Day",
-    date: "2020-12-23",
+    localDate: "2020-12-23",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -546,11 +546,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Market Holiday",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -558,11 +558,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -570,11 +570,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Market Holiday",
-    date: "2021-01-02",
+    localDate: "2021-01-02",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -582,11 +582,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Market Holiday",
-    date: "2021-01-03",
+    localDate: "2021-01-03",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -594,11 +594,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Old Age Day",
-    date: "2021-01-11",
+    localDate: "2021-01-11",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -606,11 +606,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "National Day",
-    date: "2021-02-11",
+    localDate: "2021-02-11",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -618,11 +618,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Emperor's Birthday",
-    date: "2021-02-23",
+    localDate: "2021-02-23",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -630,11 +630,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Vernal Equinox",
-    date: "2021-03-20",
+    localDate: "2021-03-20",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -642,11 +642,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Showa day",
-    date: "2021-04-29",
+    localDate: "2021-04-29",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -654,11 +654,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Constitution Day",
-    date: "2021-05-03",
+    localDate: "2021-05-03",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -666,11 +666,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Greenery Day",
-    date: "2021-05-04",
+    localDate: "2021-05-04",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -678,11 +678,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Children's Day",
-    date: "2021-05-05",
+    localDate: "2021-05-05",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -690,11 +690,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Marine Day",
-    date: "2021-07-19",
+    localDate: "2021-07-19",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -702,11 +702,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Mountain Day",
-    date: "2021-08-11",
+    localDate: "2021-08-11",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -714,11 +714,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Old Age Day",
-    date: "2021-09-20",
+    localDate: "2021-09-20",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -726,11 +726,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Autumnal Equinox",
-    date: "2021-09-23",
+    localDate: "2021-09-23",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -738,11 +738,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Sports Day",
-    date: "2021-10-11",
+    localDate: "2021-10-11",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -750,11 +750,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Culture Day",
-    date: "2021-11-03",
+    localDate: "2021-11-03",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -762,11 +762,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Worker's Day",
-    date: "2021-11-23",
+    localDate: "2021-11-23",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -774,11 +774,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XJPX",
     reason: "Market Holiday",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "15:00",
+        localStartTime: "09:00",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -786,11 +786,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -798,11 +798,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "Chinese New Year",
-    date: "2021-02-11",
+    localDate: "2021-02-11",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -810,11 +810,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "Chinese New Year",
-    date: "2021-02-12",
+    localDate: "2021-02-12",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -822,11 +822,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "Chinese New Year",
-    date: "2021-02-15",
+    localDate: "2021-02-15",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -834,11 +834,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "Chinese New Year",
-    date: "2021-02-16",
+    localDate: "2021-02-16",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -846,11 +846,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "Chinese New Year",
-    date: "2021-02-17",
+    localDate: "2021-02-17",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -858,11 +858,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "Qingming Festival",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -870,11 +870,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "Dragon Boat Festival",
-    date: "2021-06-14",
+    localDate: "2021-06-14",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -882,11 +882,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "Mid-Autumn Festival",
-    date: "2021-09-21",
+    localDate: "2021-09-21",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -894,11 +894,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "National Day",
-    date: "2021-10-01",
+    localDate: "2021-10-01",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -906,11 +906,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "National Day",
-    date: "2021-10-04",
+    localDate: "2021-10-04",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -918,11 +918,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "National Day",
-    date: "2021-10-05",
+    localDate: "2021-10-05",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -930,11 +930,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "National Day",
-    date: "2021-10-06",
+    localDate: "2021-10-06",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -942,11 +942,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHG",
     reason: "National Day",
-    date: "2021-10-07",
+    localDate: "2021-10-07",
     sessions: [
       {
-        start: "09:30",
-        end: "15:00",
+        localStartTime: "09:30",
+        localEndTime: "15:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -954,16 +954,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:30",
-        end: "12:00",
+        localStartTime: "09:30",
+        localEndTime: "12:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:00",
-        end: "16:00",
+        localStartTime: "12:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -971,11 +971,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -983,16 +983,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "09:30",
-        end: "12:00",
+        localStartTime: "09:30",
+        localEndTime: "12:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:00",
-        end: "16:00",
+        localStartTime: "12:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1000,11 +1000,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1012,16 +1012,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Chinese New Year",
-    date: "2021-02-11",
+    localDate: "2021-02-11",
     sessions: [
       {
-        start: "09:30",
-        end: "12:00",
+        localStartTime: "09:30",
+        localEndTime: "12:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:00",
-        end: "16:00",
+        localStartTime: "12:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1029,11 +1029,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Chinese New Year",
-    date: "2021-02-12",
+    localDate: "2021-02-12",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1041,11 +1041,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Chinese New Year",
-    date: "2021-02-15",
+    localDate: "2021-02-15",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1053,11 +1053,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Good Friday",
-    date: "2021-04-04",
+    localDate: "2021-04-04",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1065,11 +1065,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Qingming Festival",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1077,11 +1077,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Easter",
-    date: "2021-04-06",
+    localDate: "2021-04-06",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1089,11 +1089,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "National Day",
-    date: "2021-05-19",
+    localDate: "2021-05-19",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1101,11 +1101,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Dragon Boat Festival",
-    date: "2021-06-14",
+    localDate: "2021-06-14",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1113,11 +1113,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Special Administrative Region Establishment Day",
-    date: "2021-07-01",
+    localDate: "2021-07-01",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1125,11 +1125,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "National Day",
-    date: "2021-09-22",
+    localDate: "2021-09-22",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1137,11 +1137,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "National Day",
-    date: "2021-10-01",
+    localDate: "2021-10-01",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1149,11 +1149,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "National Day",
-    date: "2021-10-14",
+    localDate: "2021-10-14",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1161,16 +1161,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "09:30",
-        end: "12:00",
+        localStartTime: "09:30",
+        localEndTime: "12:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:00",
-        end: "16:00",
+        localStartTime: "12:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1178,11 +1178,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "Christmas",
-    date: "2021-12-27",
+    localDate: "2021-12-27",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1190,16 +1190,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XHKG",
     reason: "New Year's Day",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "09:30",
-        end: "12:00",
+        localStartTime: "09:30",
+        localEndTime: "12:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:00",
-        end: "16:00",
+        localStartTime: "12:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1208,16 +1208,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XAMS",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:40",
+        localStartTime: "14:05",
+        localEndTime: "17:40",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1225,11 +1225,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XAMS",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:00",
-        end: "17:40",
+        localStartTime: "09:00",
+        localEndTime: "17:40",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1237,16 +1237,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XAMS",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:40",
+        localStartTime: "14:05",
+        localEndTime: "17:40",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1254,11 +1254,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XAMS",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:00",
-        end: "17:40",
+        localStartTime: "09:00",
+        localEndTime: "17:40",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1266,11 +1266,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1278,11 +1278,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "Chinese New Year",
-    date: "2021-02-11",
+    localDate: "2021-02-11",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1290,11 +1290,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "Chinese New Year",
-    date: "2021-02-12",
+    localDate: "2021-02-12",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1302,11 +1302,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "Chinese New Year",
-    date: "2021-02-15",
+    localDate: "2021-02-15",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1314,11 +1314,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "Chinese New Year",
-    date: "2021-02-16",
+    localDate: "2021-02-16",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1326,11 +1326,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "Chinese New Year",
-    date: "2021-02-17",
+    localDate: "2021-02-17",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1338,11 +1338,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "Qingming Festival",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1350,11 +1350,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "Dragon Boat Festival",
-    date: "2021-06-14",
+    localDate: "2021-06-14",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1362,11 +1362,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "Mid-Autumn Festival",
-    date: "2021-09-21",
+    localDate: "2021-09-21",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1374,11 +1374,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "National Day",
-    date: "2021-10-01",
+    localDate: "2021-10-01",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1386,11 +1386,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "National Day",
-    date: "2021-10-04",
+    localDate: "2021-10-04",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1398,11 +1398,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "National Day",
-    date: "2021-10-05",
+    localDate: "2021-10-05",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1410,11 +1410,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "National Day",
-    date: "2021-10-06",
+    localDate: "2021-10-06",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1422,11 +1422,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSHE",
     reason: "National Day",
-    date: "2021-10-07",
+    localDate: "2021-10-07",
     sessions: [
       {
-        start: "09:30",
-        end: "14:57",
+        localStartTime: "09:30",
+        localEndTime: "14:57",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1434,16 +1434,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:30",
-        end: "13:00",
+        localStartTime: "09:30",
+        localEndTime: "13:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "13:00",
-        end: "16:00",
+        localStartTime: "13:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1451,11 +1451,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1463,11 +1463,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Boxing Day",
-    date: "2020-12-28",
+    localDate: "2020-12-28",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1475,11 +1475,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1487,11 +1487,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Family Day",
-    date: "2021-02-15",
+    localDate: "2021-02-15",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1499,11 +1499,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1511,11 +1511,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Victoria Day",
-    date: "2021-05-24",
+    localDate: "2021-05-24",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1523,11 +1523,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Canada Day",
-    date: "2021-07-01",
+    localDate: "2021-07-01",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1535,11 +1535,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Civic Day",
-    date: "2021-08-02",
+    localDate: "2021-08-02",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1547,11 +1547,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Labor Day",
-    date: "2021-09-06",
+    localDate: "2021-09-06",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1559,11 +1559,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Thanksgiving Day",
-    date: "2021-10-11",
+    localDate: "2021-10-11",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1571,11 +1571,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Christmas",
-    date: "2021-12-27",
+    localDate: "2021-12-27",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1583,11 +1583,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XTSE",
     reason: "Christmas",
-    date: "2021-12-28",
+    localDate: "2021-12-28",
     sessions: [
       {
-        start: "09:30",
-        end: "16:00",
+        localStartTime: "09:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1595,11 +1595,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Guru Nanak Jayanti",
-    date: "2020-11-30",
+    localDate: "2020-11-30",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1607,11 +1607,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1619,11 +1619,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Republic Day",
-    date: "2021-01-26",
+    localDate: "2021-01-26",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1631,11 +1631,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Maha Shivratri Day",
-    date: "2021-03-11",
+    localDate: "2021-03-11",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1643,11 +1643,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Holi",
-    date: "2021-03-29",
+    localDate: "2021-03-29",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1655,11 +1655,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1667,11 +1667,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Dr. Baba Saheb Ambedkar Jayanti",
-    date: "2021-04-14",
+    localDate: "2021-04-14",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1679,11 +1679,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Eid al-Fitr",
-    date: "2021-05-13",
+    localDate: "2021-05-13",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1691,11 +1691,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Eid al-Adha",
-    date: "2021-07-20",
+    localDate: "2021-07-20",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1703,11 +1703,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Ashura",
-    date: "2021-08-19",
+    localDate: "2021-08-19",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1715,11 +1715,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Ganesh Chaturthi",
-    date: "2021-09-10",
+    localDate: "2021-09-10",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1727,11 +1727,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Dussehra",
-    date: "2021-10-15",
+    localDate: "2021-10-15",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1739,11 +1739,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Diwali",
-    date: "2021-11-04",
+    localDate: "2021-11-04",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1751,11 +1751,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBOM",
     reason: "Guru Nanak Jayanti",
-    date: "2021-11-19",
+    localDate: "2021-11-19",
     sessions: [
       {
-        start: "09:15",
-        end: "15:30",
+        localStartTime: "09:15",
+        localEndTime: "15:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1763,16 +1763,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XASX",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "10:00",
-        end: "14:10",
+        localStartTime: "10:00",
+        localEndTime: "14:10",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:10",
-        end: "16:00",
+        localStartTime: "14:10",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1780,11 +1780,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XASX",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "10:00",
-        end: "16:00",
+        localStartTime: "10:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1792,11 +1792,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XASX",
     reason: "Boxing Day",
-    date: "2020-12-28",
+    localDate: "2020-12-28",
     sessions: [
       {
-        start: "10:00",
-        end: "16:00",
+        localStartTime: "10:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1804,16 +1804,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XASX",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "10:00",
-        end: "14:10",
+        localStartTime: "10:00",
+        localEndTime: "14:10",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:10",
-        end: "16:00",
+        localStartTime: "14:10",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1822,11 +1822,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XASX",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "10:00",
-        end: "16:00",
+        localStartTime: "10:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1834,11 +1834,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XASX",
     reason: "Australia Day",
-    date: "2021-01-26",
+    localDate: "2021-01-26",
     sessions: [
       {
-        start: "10:00",
-        end: "16:00",
+        localStartTime: "10:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1846,11 +1846,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XASX",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "10:00",
-        end: "16:00",
+        localStartTime: "10:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1858,11 +1858,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XASX",
     reason: "Easter Monday",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "10:00",
-        end: "16:00",
+        localStartTime: "10:00",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1870,16 +1870,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XASX",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "10:00",
-        end: "14:30",
+        localStartTime: "10:00",
+        localEndTime: "14:30",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:30",
-        end: "16:00",
+        localStartTime: "14:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1887,16 +1887,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XASX",
     reason: "New Year's Day",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "10:00",
-        end: "14:30",
+        localStartTime: "10:00",
+        localEndTime: "14:30",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:30",
-        end: "16:00",
+        localStartTime: "14:30",
+        localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1904,16 +1904,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMAD",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "14:00",
+        localStartTime: "09:00",
+        localEndTime: "14:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:00",
-        end: "17:30",
+        localStartTime: "14:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1921,11 +1921,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMAD",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1933,16 +1933,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMAD",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "14:00",
+        localStartTime: "09:00",
+        localEndTime: "14:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:00",
-        end: "17:30",
+        localStartTime: "14:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1951,11 +1951,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMAD",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1963,11 +1963,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMAD",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1975,11 +1975,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMAD",
     reason: "Easter",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1987,11 +1987,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMAD",
     reason: "Labor Day",
-    date: "2021-05-01",
+    localDate: "2021-05-01",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -1999,11 +1999,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMAD",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2011,11 +2011,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMAD",
     reason: "Christmas",
-    date: "2021-12-25",
+    localDate: "2021-12-25",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2023,11 +2023,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMAD",
     reason: "New Year's Day",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2035,16 +2035,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "10:00",
-        end: "12:45",
+        localStartTime: "10:00",
+        localEndTime: "12:45",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:45",
-        end: "16:45",
+        localStartTime: "12:45",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2052,11 +2052,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2064,11 +2064,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "Boxing Day",
-    date: "2020-12-28",
+    localDate: "2020-12-28",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2076,16 +2076,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "10:00",
-        end: "12:45",
+        localStartTime: "10:00",
+        localEndTime: "12:45",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:45",
-        end: "16:45",
+        localStartTime: "12:45",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2093,11 +2093,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2105,11 +2105,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "New Year's Day",
-    date: "2021-01-04",
+    localDate: "2021-01-04",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2117,11 +2117,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "National Day",
-    date: "2021-02-08",
+    localDate: "2021-02-08",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2129,11 +2129,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2141,11 +2141,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "Easter",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2153,11 +2153,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "ANZAC Day",
-    date: "2021-04-26",
+    localDate: "2021-04-26",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2165,11 +2165,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "Queen's Birthday",
-    date: "2021-06-07",
+    localDate: "2021-06-07",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2177,11 +2177,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "Labor Day",
-    date: "2021-10-25",
+    localDate: "2021-10-25",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2189,16 +2189,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "10:00",
-        end: "12:45",
+        localStartTime: "10:00",
+        localEndTime: "12:45",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:45",
-        end: "16:45",
+        localStartTime: "12:45",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2206,11 +2206,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "Christmas",
-    date: "2021-12-27",
+    localDate: "2021-12-27",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2218,11 +2218,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "Boxing Day",
-    date: "2021-12-28",
+    localDate: "2021-12-28",
     sessions: [
       {
-        start: "10:00",
-        end: "16:45",
+        localStartTime: "10:00",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2230,16 +2230,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XNZE",
     reason: "New Year's Day",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "10:00",
-        end: "12:45",
+        localStartTime: "10:00",
+        localEndTime: "12:45",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:45",
-        end: "16:45",
+        localStartTime: "12:45",
+        localEndTime: "16:45",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2247,16 +2247,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSES",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "12:00",
+        localStartTime: "09:00",
+        localEndTime: "12:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:00",
-        end: "17:00",
+        localStartTime: "12:00",
+        localEndTime: "17:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2264,11 +2264,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSES",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:00",
-        end: "17:00",
+        localStartTime: "09:00",
+        localEndTime: "17:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2276,16 +2276,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSES",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "12:00",
+        localStartTime: "09:00",
+        localEndTime: "12:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:00",
-        end: "17:00",
+        localStartTime: "12:00",
+        localEndTime: "17:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2293,11 +2293,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSES",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:00",
-        end: "17:00",
+        localStartTime: "09:00",
+        localEndTime: "17:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2305,16 +2305,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSES",
     reason: "Chinese New Year",
-    date: "2021-02-11",
+    localDate: "2021-02-11",
     sessions: [
       {
-        start: "09:00",
-        end: "12:00",
+        localStartTime: "09:00",
+        localEndTime: "12:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:00",
-        end: "17:00",
+        localStartTime: "12:00",
+        localEndTime: "17:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2322,11 +2322,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSES",
     reason: "Chinese New Year",
-    date: "2021-02-12",
+    localDate: "2021-02-12",
     sessions: [
       {
-        start: "09:00",
-        end: "17:00",
+        localStartTime: "09:00",
+        localEndTime: "17:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2334,11 +2334,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSES",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "09:00",
-        end: "17:00",
+        localStartTime: "09:00",
+        localEndTime: "17:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2346,11 +2346,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSES",
     reason: "Natinoal Day",
-    date: "2021-08-09",
+    localDate: "2021-08-09",
     sessions: [
       {
-        start: "09:00",
-        end: "17:00",
+        localStartTime: "09:00",
+        localEndTime: "17:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2358,16 +2358,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSES",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "12:00",
+        localStartTime: "09:00",
+        localEndTime: "12:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:00",
-        end: "17:00",
+        localStartTime: "12:00",
+        localEndTime: "17:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2375,16 +2375,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XSES",
     reason: "New Year's Day",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "12:00",
+        localStartTime: "09:00",
+        localEndTime: "12:00",
         status: MarketStatus.OPEN,
       },
       {
-        start: "12:00",
-        end: "17:00",
+        localStartTime: "12:00",
+        localEndTime: "17:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2393,16 +2393,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XPAR",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2410,11 +2410,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XPAR",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2422,16 +2422,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XPAR",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2439,11 +2439,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XPAR",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2451,11 +2451,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XPAR",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2463,11 +2463,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XPAR",
     reason: "Easter Monday",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2475,16 +2475,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XPAR",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2492,16 +2492,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XPAR",
     reason: "New Year's Day",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2509,16 +2509,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBRU",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2526,11 +2526,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBRU",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2538,16 +2538,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBRU",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2555,11 +2555,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBRU",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2567,11 +2567,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBRU",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2579,11 +2579,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBRU",
     reason: "Easter Monday",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2591,16 +2591,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBRU",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2608,16 +2608,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XBRU",
     reason: "New Year's Day",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2625,16 +2625,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLIS",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2642,11 +2642,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLIS",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2654,16 +2654,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLIS",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2671,11 +2671,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLIS",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2683,11 +2683,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLIS",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2695,11 +2695,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLIS",
     reason: "Easter Monday",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2707,16 +2707,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLIS",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2724,16 +2724,16 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XLIS",
     reason: "New Year's Day",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "14:05",
+        localStartTime: "09:00",
+        localEndTime: "14:05",
         status: MarketStatus.OPEN,
       },
       {
-        start: "14:05",
-        end: "17:30",
+        localStartTime: "14:05",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2741,11 +2741,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XETR",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2753,11 +2753,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XETR",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2765,11 +2765,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XETR",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2777,11 +2777,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XETR",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2789,11 +2789,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XETR",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2801,11 +2801,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XETR",
     reason: "Easter Monday",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2813,11 +2813,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XETR",
     reason: "Pentecost",
-    date: "2021-05-24",
+    localDate: "2021-05-24",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2825,11 +2825,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XETR",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2837,11 +2837,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XETR",
     reason: "New Year's Day",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2849,11 +2849,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMIL",
     reason: "Christmas",
-    date: "2020-12-24",
+    localDate: "2020-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2861,11 +2861,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMIL",
     reason: "Christmas",
-    date: "2020-12-25",
+    localDate: "2020-12-25",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2873,11 +2873,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMIL",
     reason: "New Year's Day",
-    date: "2020-12-31",
+    localDate: "2020-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2885,11 +2885,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMIL",
     reason: "New Year's Day",
-    date: "2021-01-01",
+    localDate: "2021-01-01",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2897,11 +2897,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMIL",
     reason: "Epiphany",
-    date: "2021-01-06",
+    localDate: "2021-01-06",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2909,11 +2909,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMIL",
     reason: "Good Friday",
-    date: "2021-04-02",
+    localDate: "2021-04-02",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2921,11 +2921,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMIL",
     reason: "Easter",
-    date: "2021-04-05",
+    localDate: "2021-04-05",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2933,11 +2933,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMIL",
     reason: "Christmas",
-    date: "2021-12-24",
+    localDate: "2021-12-24",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],
@@ -2945,11 +2945,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
   {
     market: "XMIL",
     reason: "New Year's Day",
-    date: "2021-12-31",
+    localDate: "2021-12-31",
     sessions: [
       {
-        start: "09:00",
-        end: "17:30",
+        localStartTime: "09:00",
+        localEndTime: "17:30",
         status: MarketStatus.CLOSE_SPECIAL,
       },
     ],

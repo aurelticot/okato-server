@@ -1,4 +1,4 @@
-import { getLogger } from "../../../../lib/utils";
+import { getLogger, buildSessionsForDates } from "../../../../lib/utils";
 const logger = getLogger("graphql");
 
 import merge from "lodash.merge";
@@ -159,51 +159,27 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
         }
       );
 
-      let returnedSessions: MarketSessionData[] = [];
-
-      let dateCursor = start;
-      // eslint-disable-next-line no-loops/no-loops
-      while (!dateCursor.hasSame(end.plus({ day: 1 }), "day")) {
-        const weekday = dateCursor.weekday;
-        const formattedDay = dateCursor.toISODate();
-
-        const specialDay = db.marketSpecialDays.filter(
-          (marketSpecialDay: MarketSpecialDay) => {
-            return (
-              marketSpecialDay.market === market.id &&
-              marketSpecialDay.date === formattedDay
-            );
-          }
-        );
-
-        // TODO Try to find a cleaner way of the following
-        if (specialDay.length > 0) {
-          const daySessions: MarketSessionData[] = specialDay[0].sessions.map(
-            (session) => ({
-              date: formattedDay,
-              startTime: session.start,
-              endTime: session.end,
-              status: session.status,
-              mainStatus: getMarketMainStatus(session.status),
-              reason: specialDay[0].reason,
-            })
-          );
-          returnedSessions = [...returnedSessions, ...daySessions];
-        } else {
-          const daySessions: MarketSessionData[] = defaultSessions
-            .filter((session) => session.weekday === weekday)
-            .map((session) => ({
-              date: formattedDay,
-              startTime: session.start,
-              endTime: session.end,
-              status: session.status,
-              mainStatus: getMarketMainStatus(session.status),
-            }));
-          returnedSessions = [...returnedSessions, ...daySessions];
+      const specialDays = db.marketSpecialDays.filter(
+        (marketSpecialDay: MarketSpecialDay) => {
+          return marketSpecialDay.market === market.id;
         }
+      );
 
-        dateCursor = dateCursor.plus({ days: 1 });
-      }
+      const returnedSessions: MarketSessionData[] = buildSessionsForDates(
+        start,
+        end,
+        market.timezone,
+        defaultSessions,
+        specialDays
+      ).map((session) => {
+        return {
+          start: session.start.toISO(),
+          end: session.end.toISO(),
+          mainStatus: getMarketMainStatus(session.status),
+          status: session.status,
+          reason: session.reason,
+        };
+      });
 
       // -----------------------------------------------------------------------
 
