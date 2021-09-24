@@ -130,23 +130,20 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
 
       // -----------------------------------------------------------------------
 
-      const rawStartDate = DateTime.fromISO(startDate);
-      if (!rawStartDate.isValid) {
+      const start = DateTime.fromISO(startDate);
+      if (!start.isValid) {
         throw new GraphQLInvalidArgsError(
           "The sessions start date is not valid.",
           { startDate }
         );
       }
-      const rawEndDate = DateTime.fromISO(endDate);
-      if (!rawEndDate.isValid) {
+      const end = DateTime.fromISO(endDate);
+      if (!end.isValid) {
         throw new GraphQLInvalidArgsError(
           "The sessions end date is not valid.",
           { endDate }
         );
       }
-
-      const start = rawStartDate.startOf("day");
-      const end = rawEndDate.endOf("day");
 
       const duration = end.diff(start).as("days");
       if (duration < 1 || duration > 30) {

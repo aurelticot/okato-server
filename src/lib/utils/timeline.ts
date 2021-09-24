@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import { getMarketMainStatus } from ".";
+import { getMarketMainStatus } from "./market";
 import { MarketStatus, ResolvedSession, TimelineSegment } from "../types";
 
 const cleanTimelineSegments = (

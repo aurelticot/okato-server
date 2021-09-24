@@ -35,13 +35,13 @@ export const buildSessionsForDates = (
             {
               zone: marketTimezone,
             }
-          ),
+          ).startOf("minutes"),
           end: DateTime.fromISO(
             `${specialDay[0].localDate}T${session.localEndTime}`,
             {
               zone: marketTimezone,
             }
-          ),
+          ).startOf("minutes"),
           status: session.status,
           reason: specialDay[0].reason,
         })
@@ -53,10 +53,10 @@ export const buildSessionsForDates = (
         .map((session) => ({
           start: DateTime.fromISO(`${formattedDay}T${session.localStartTime}`, {
             zone: marketTimezone,
-          }),
+          }).startOf("minutes"),
           end: DateTime.fromISO(`${formattedDay}T${session.localEndTime}`, {
             zone: marketTimezone,
-          }),
+          }).startOf("minutes"),
           status: session.status,
         }));
       resolvedSessions = [...resolvedSessions, ...daySessions];
