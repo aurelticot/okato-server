@@ -9,6 +9,14 @@ export const typeDefs = gql`
     reason: String
   }
 
+  type TimelineSegment {
+    startDate: String!
+    start: Float!
+    duration: Float!
+    mainStatus: MarketStatus!
+    status: MarketStatus!
+  }
+
   type Market {
     id: ID!
     mic: String!
@@ -23,6 +31,7 @@ export const typeDefs = gql`
     capitalisation: Float
     website: String
     sessions(startDate: String!, endDate: String!): [MarketSession!]!
+    timeline(startDate: String!, endDate: String!): [TimelineSegment!]!
   }
 
   type Markets {
