@@ -18,7 +18,7 @@ export const buildSessionsForDates = (
   let dateCursor = start;
 
   // eslint-disable-next-line no-loops/no-loops
-  while (!dateCursor.hasSame(end.plus({ day: 1 }), "day")) {
+  while (!dateCursor.hasSame(end.plus({ days: 1 }), "day")) {
     const weekday = dateCursor.weekday;
     const formattedDay = dateCursor.toISODate();
 
@@ -35,13 +35,13 @@ export const buildSessionsForDates = (
             {
               zone: marketTimezone,
             }
-          ).startOf("minutes"),
+          ).startOf("minute"),
           end: DateTime.fromISO(
             `${specialDay[0].localDate}T${session.localEndTime}`,
             {
               zone: marketTimezone,
             }
-          ).startOf("minutes"),
+          ).startOf("minute"),
           status: session.status,
           reason: specialDay[0].reason,
         })
@@ -53,10 +53,10 @@ export const buildSessionsForDates = (
         .map((session) => ({
           start: DateTime.fromISO(`${formattedDay}T${session.localStartTime}`, {
             zone: marketTimezone,
-          }).startOf("minutes"),
+          }).startOf("minute"),
           end: DateTime.fromISO(`${formattedDay}T${session.localEndTime}`, {
             zone: marketTimezone,
-          }).startOf("minutes"),
+          }).startOf("minute"),
           status: session.status,
         }));
       resolvedSessions = [...resolvedSessions, ...daySessions];
