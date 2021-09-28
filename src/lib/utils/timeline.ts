@@ -47,84 +47,29 @@ const cleanTimelineSegments = (
   return returnedSegments;
 };
 
-const fillGapTimelineSegments = (
-  segments: TimelineSegment[],
-  timelineSize: number
-): TimelineSegment[] => {
-  const size = segments.length;
-  const completedSegments: TimelineSegment[] = [];
-
-  segments
-    .sort((a, b) => {
-      return a.start - b.start;
-    })
-    .map((segment, index, array) => {
-      const { startDate, start, duration } = segment;
-      const end = start + duration;
-      if (index === 0 && start !== 0) {
-        completedSegments.push({
-          startDate: startDate.minus({ days: 1 }),
-          start: 0,
-          duration: start,
-          status: MarketStatus.CLOSE,
-        });
-      }
-
-      const nextIndex = index + 1;
-      if (nextIndex < size) {
-        const nextSegment = array[nextIndex];
-        if (end !== nextSegment.start) {
-          completedSegments.push({
-            startDate: nextSegment.startDate,
-            start: end,
-            duration: nextSegment.start - end,
-            status: MarketStatus.CLOSE,
-          });
-        }
-      } else if (end !== timelineSize) {
-        completedSegments.push({
-          startDate: startDate.plus({ days: 1 }),
-          start: end,
-          duration: timelineSize - end,
-          status: MarketStatus.CLOSE,
-        });
-      }
-
-      completedSegments.push(segment);
-    });
-
-  return completedSegments.sort((a, b) => {
-    return a.start - b.start;
-  });
-};
-
 export const buildTimeline = (
   timelineStart: DateTime,
   timelineEnd: DateTime,
   sessions: ResolvedSession[]
 ): TimelineSegment[] => {
-  const timelineSize = timelineEnd.diff(timelineStart).as("minutes");
   const segments: TimelineSegment[] = sessions
-    .filter((session) => {
-      const { start: sessionStartTime, end: sessionEndTime } = session;
-      return !(
-        sessionEndTime < timelineStart || sessionStartTime > timelineEnd
-      );
-    })
+    .filter(
+      (session) => !(session.end < timelineStart || session.start > timelineEnd)
+    )
     .map((session) => {
       const { start, end, status } = session;
-      let sessionStartTime = start;
-      let sessionEndTime = end;
-      if (sessionStartTime < timelineStart) {
-        sessionStartTime = timelineStart;
+      let sessionStart = start;
+      let sessionEnd = end;
+      if (sessionStart < timelineStart) {
+        sessionStart = timelineStart;
       }
-      if (sessionEndTime > timelineEnd) {
-        sessionEndTime = timelineEnd;
+      if (sessionEnd > timelineEnd) {
+        sessionEnd = timelineEnd;
       }
       return {
         startDate: start,
-        start: sessionStartTime.diff(timelineStart).as("minutes"),
-        duration: sessionEndTime.diff(sessionStartTime).as("minutes"),
+        start: sessionStart.diff(timelineStart).as("minutes"),
+        duration: sessionEnd.diff(sessionStart).as("minutes"),
         status:
           status === MarketStatus.CLOSE_SPECIAL
             ? status
@@ -132,6 +77,5 @@ export const buildTimeline = (
       };
     });
 
-  const completedSegments = fillGapTimelineSegments(segments, timelineSize);
-  return cleanTimelineSegments(completedSegments);
+  return cleanTimelineSegments(segments);
 };
