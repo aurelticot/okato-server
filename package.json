@@ -1,6 +1,6 @@
 {
   "name": "okato-server",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Stock Echange trading sessions - Server side of the okato project",
   "private": true,
   "main": "build/index.js",
@@ -45,7 +45,7 @@
     "graphql": "^15.4.0",
     "helmet": "^4.2.0",
     "lodash.merge": "^4.6.2",
-    "luxon": "^1.25.0",
+    "luxon": "^2.0.2",
     "nanoid": "^3.1.18",
     "on-headers": "^1.0.2",
     "raygun": "^0.12.2",
@@ -60,7 +60,7 @@
     "@types/express-sslify": "^1.2.1",
     "@types/helmet": "0.0.48",
     "@types/lodash.merge": "^4.6.6",
-    "@types/luxon": "^1.25.0",
+    "@types/luxon": "^2.0.4",
     "@types/nanoid": "^2.1.0",
     "@types/node": "^14.14.10",
     "@types/on-headers": "^1.0.0",
@@ -82,6 +82,6 @@
     "typescript": "^4.1.2"
   },
   "engines": {
-    "node": "14.13.0"
+    "node": "14.18.0"
   }
 }

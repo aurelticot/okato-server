@@ -1,3 +1,4 @@
+import { DateTime } from "luxon";
 import { Effectivity } from "./common";
 
 export interface Market {
@@ -15,25 +16,29 @@ export interface Market {
   website: string;
 }
 
-export interface MarketSession extends MarketSessionDetail {
-  weekday: number;
+export interface ResolvedSession {
+  start: DateTime;
+  end: DateTime;
+  status: MarketStatus;
+  reason?: string;
 }
 
 export interface MarketSessionDetail {
-  start: string;
-  end: string;
+  localStartTime: string;
+  localEndTime: string;
   status: MarketStatus;
 }
 
-export interface MarketDefaultSession extends MarketSession {
+export interface MarketDefaultSession extends MarketSessionDetail {
   market: string;
+  weekday: number;
   effectivity: Effectivity;
 }
 
 export interface MarketSpecialDay {
   reason: string;
   market: string;
-  date: string;
+  localDate: string;
   sessions: MarketSessionDetail[];
 }
 

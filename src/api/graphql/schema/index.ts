@@ -2,12 +2,19 @@ import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
   type MarketSession {
-    date: String!
-    startTime: String!
-    endTime: String!
+    start: String!
+    end: String!
     mainStatus: MarketStatus!
     status: MarketStatus!
     reason: String
+  }
+
+  type TimelineSegment {
+    startDate: String!
+    start: Float!
+    duration: Float!
+    mainStatus: MarketStatus!
+    status: MarketStatus!
   }
 
   type Market {
@@ -24,6 +31,7 @@ export const typeDefs = gql`
     capitalisation: Float
     website: String
     sessions(startDate: String!, endDate: String!): [MarketSession!]!
+    timeline(startDate: String!, endDate: String!): [TimelineSegment!]!
   }
 
   type Markets {

@@ -22,10 +22,22 @@ export interface MarketSessionsVariables {
 }
 
 export interface MarketSessionData {
-  date: string;
-  startTime: string;
-  endTime: string;
+  start: string;
+  end: string;
   mainStatus: MarketStatus;
   status: MarketStatus;
   reason?: string;
+}
+
+export interface MarketTimelineVariables {
+  startDate: string;
+  endDate: string;
+}
+
+export interface TimelineSegmentData {
+  startDate: string;
+  start: number;
+  duration: number;
+  mainStatus: MarketStatus;
+  status: MarketStatus;
 }

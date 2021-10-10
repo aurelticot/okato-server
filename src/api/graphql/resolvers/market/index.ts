@@ -1,4 +1,8 @@
-import { getLogger } from "../../../../lib/utils";
+import {
+  getLogger,
+  buildSessionsForDates,
+  buildTimeline,
+} from "../../../../lib/utils";
 const logger = getLogger("graphql");
 
 import merge from "lodash.merge";
@@ -9,6 +13,7 @@ import {
   Market,
   MarketSpecialDay,
   EffectivityStatus,
+  ResolvedSession,
 } from "../../../../lib/types";
 import {
   getMarketSortingFunction,
@@ -20,6 +25,8 @@ import {
   MarketsData,
   MarketSessionsVariables,
   MarketSessionData,
+  MarketTimelineVariables,
+  TimelineSegmentData,
 } from "./types";
 import {
   GraphQLInvalidArgsError,
@@ -123,23 +130,20 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
 
       // -----------------------------------------------------------------------
 
-      const rawStartDate = DateTime.fromISO(startDate);
-      if (!rawStartDate.isValid) {
+      const start = DateTime.fromISO(startDate);
+      if (!start.isValid) {
         throw new GraphQLInvalidArgsError(
           "The sessions start date is not valid.",
           { startDate }
         );
       }
-      const rawEndDate = DateTime.fromISO(endDate);
-      if (!rawEndDate.isValid) {
+      const end = DateTime.fromISO(endDate);
+      if (!end.isValid) {
         throw new GraphQLInvalidArgsError(
           "The sessions end date is not valid.",
           { endDate }
         );
       }
-
-      const start = rawStartDate.startOf("day");
-      const end = rawEndDate.endOf("day");
 
       const duration = end.diff(start).as("days");
       if (duration < 1 || duration > 30) {
@@ -159,51 +163,27 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
         }
       );
 
-      let returnedSessions: MarketSessionData[] = [];
-
-      let dateCursor = start;
-      // eslint-disable-next-line no-loops/no-loops
-      while (!dateCursor.hasSame(end.plus({ day: 1 }), "day")) {
-        const weekday = dateCursor.weekday;
-        const formattedDay = dateCursor.toISODate();
-
-        const specialDay = db.marketSpecialDays.filter(
-          (marketSpecialDay: MarketSpecialDay) => {
-            return (
-              marketSpecialDay.market === market.id &&
-              marketSpecialDay.date === formattedDay
-            );
-          }
-        );
-
-        // TODO Try to find a cleaner way of the following
-        if (specialDay.length > 0) {
-          const daySessions: MarketSessionData[] = specialDay[0].sessions.map(
-            (session) => ({
-              date: formattedDay,
-              startTime: session.start,
-              endTime: session.end,
-              status: session.status,
-              mainStatus: getMarketMainStatus(session.status),
-              reason: specialDay[0].reason,
-            })
-          );
-          returnedSessions = [...returnedSessions, ...daySessions];
-        } else {
-          const daySessions: MarketSessionData[] = defaultSessions
-            .filter((session) => session.weekday === weekday)
-            .map((session) => ({
-              date: formattedDay,
-              startTime: session.start,
-              endTime: session.end,
-              status: session.status,
-              mainStatus: getMarketMainStatus(session.status),
-            }));
-          returnedSessions = [...returnedSessions, ...daySessions];
+      const specialDays = db.marketSpecialDays.filter(
+        (marketSpecialDay: MarketSpecialDay) => {
+          return marketSpecialDay.market === market.id;
         }
+      );
 
-        dateCursor = dateCursor.plus({ days: 1 });
-      }
+      const returnedSessions: MarketSessionData[] = buildSessionsForDates(
+        start,
+        end,
+        market.timezone,
+        defaultSessions,
+        specialDays
+      ).map((session) => {
+        return {
+          start: session.start.toISO(),
+          end: session.end.toISO(),
+          mainStatus: getMarketMainStatus(session.status),
+          status: session.status,
+          reason: session.reason,
+        };
+      });
 
       // -----------------------------------------------------------------------
 
@@ -213,6 +193,86 @@ const entityResolvers: IResolvers<Market, GraphQLContext> = {
         graphql: { resolver: "Market.sessions" },
       });
       return returnedSessions;
+    },
+    timeline: (
+      market,
+      { startDate, endDate }: MarketTimelineVariables,
+      { db, req }
+    ): TimelineSegmentData[] => {
+      const profiler = logger.startTimer();
+      const { requestId } = req;
+      logger.verbose(`Starting GraphQL request resolver 'Market.timeline'...`, {
+        requestId,
+        graphql: { resolver: "Market.timeline" },
+      });
+
+      // -----------------------------------------------------------------------
+
+      const start = DateTime.fromISO(startDate);
+      if (!start.isValid) {
+        throw new GraphQLInvalidArgsError(
+          "The timeline start date is not valid.",
+          { startDate }
+        );
+      }
+      const end = DateTime.fromISO(endDate);
+      if (!end.isValid) {
+        throw new GraphQLInvalidArgsError(
+          "The timeline end date is not valid.",
+          { endDate }
+        );
+      }
+
+      const duration = end.diff(start).as("days");
+      if (duration < 1 || duration > 30) {
+        throw new GraphQLInvalidArgsError(
+          "The range between the timeline start and end date must be between 1 and 30 days.",
+          { startDate, endDate }
+        );
+      }
+
+      const defaultSessions = db.marketDefaultSessions.filter(
+        (marketDefaultSession) => {
+          return (
+            marketDefaultSession.effectivity.status ===
+              EffectivityStatus.ACTIVE &&
+            marketDefaultSession.market === market.id
+          );
+        }
+      );
+
+      const specialDays = db.marketSpecialDays.filter(
+        (marketSpecialDay: MarketSpecialDay) => {
+          return marketSpecialDay.market === market.id;
+        }
+      );
+
+      const sessions: ResolvedSession[] = buildSessionsForDates(
+        start,
+        end,
+        market.timezone,
+        defaultSessions,
+        specialDays
+      );
+
+      const timelineSegments: TimelineSegmentData[] = buildTimeline(
+        start,
+        end,
+        sessions
+      ).map((segment) => ({
+        ...segment,
+        startDate: segment.startDate.toISO(),
+        mainStatus: getMarketMainStatus(segment.status),
+      }));
+
+      // -----------------------------------------------------------------------
+
+      profiler.done({
+        message: `GraphQL request resolver 'Market.timeline' done`,
+        requestId,
+        graphql: { resolver: "Market.timeline" },
+      });
+      return timelineSegments;
     },
   },
 };
