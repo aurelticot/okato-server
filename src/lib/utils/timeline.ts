@@ -1,5 +1,4 @@
 import { DateTime } from "luxon";
-import { getMarketMainStatus } from "./market";
 import { MarketStatus, ResolvedSession, TimelineSegment } from "../types";
 
 const cleanTimelineSegments = (
@@ -70,10 +69,7 @@ export const buildTimeline = (
         startDate: start,
         start: sessionStart.diff(timelineStart).as("minutes"),
         duration: sessionEnd.diff(sessionStart).as("minutes"),
-        status:
-          status === MarketStatus.CLOSE_SPECIAL
-            ? status
-            : getMarketMainStatus(status),
+        status,
       };
     });
 

@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import { getMarketMainStatus } from "./market";
 import {
   MarketDefaultSession,
   MarketSpecialDay,
@@ -61,6 +62,15 @@ export const buildSessionsForDates = (
         }));
       resolvedSessions = [...resolvedSessions, ...daySessions];
     }
+
+    // Keep it until extended hours are taken into account
+    resolvedSessions = resolvedSessions.map((session) => ({
+      ...session,
+      status:
+        session.status === MarketStatus.CLOSE_SPECIAL
+          ? MarketStatus.CLOSE_SPECIAL
+          : getMarketMainStatus(session.status),
+    }));
 
     dateCursor = dateCursor.plus({ days: 1 });
   }
