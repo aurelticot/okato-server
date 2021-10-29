@@ -1,3 +1,4 @@
+import "raygun-apm/http";
 import "trace";
 import "clarify";
 
