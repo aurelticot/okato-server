@@ -107,7 +107,8 @@ export const run = (): void => {
 
   logger.info(`Application name: ${config.appName}`);
   logger.info(`Application version: ${config.appVersion}`);
-  logger.info(`Environment: ${config.environmentId}`);
+  logger.info(`Environment type: ${config.envType}`);
+  logger.info(`Environment ID: ${config.envId}`);
   logger.info(`NODE_ENV: ${config.nodeEnv}`);
   logger.info(`PORT: ${config.port}`);
   logger.info(`concurrency: ${concurrency}`);
