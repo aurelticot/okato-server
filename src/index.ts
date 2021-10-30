@@ -1,5 +1,6 @@
 import "trace";
 import "clarify";
+import "raygun-apm/http";
 
 import cluster from "cluster";
 import * as main from "./main";

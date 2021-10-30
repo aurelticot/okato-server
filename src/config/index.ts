@@ -3,23 +3,21 @@ import os from "os";
 const appName: string = process.env.npm_package_name || "undefined";
 const appVersion: string = process.env.npm_package_version || "undefined";
 
-const numCPUs = os.cpus().length;
-
 const port: number = process.env.PORT ? parseInt(process.env.PORT) : 9000;
 
+const numCPUs = os.cpus().length;
 const concurrency: number = process.env.WEB_CONCURRENCY
   ? parseInt(process.env.WEB_CONCURRENCY)
   : numCPUs;
 
 const nodeEnv: "production" | "development" | "test" =
   process.env.NODE_ENV || "development";
-
-const environmentId: string = process.env.ENVIRONMENT_ID || "unknown";
+const envType: string = process.env.ENV_TYPE || "unknown";
+const envId: string = process.env.ENV_ID || "unknown";
 
 const logLevel: string | undefined = process.env.LOG_LEVEL;
 
 const enableRateLimit = !(process.env.ENABLE_RATE_LIMITE === "false");
-
 const RATE_LIMIT_DEFAULT = 10;
 let rateLimitation = RATE_LIMIT_DEFAULT;
 try {
@@ -31,7 +29,6 @@ try {
 }
 
 const enableCORS = !(process.env.ENABLE_CORS === "false");
-
 const allowedDomains: RegExp[] = process.env.ALLOWED_DOMAINS
   ? process.env.ALLOWED_DOMAINS.split(",").map((domain) => new RegExp(domain))
   : [];
@@ -44,7 +41,8 @@ export const config = {
   concurrency,
   port,
   nodeEnv,
-  environmentId,
+  envType,
+  envId,
   logLevel,
   enableRateLimit,
   rateLimitation,

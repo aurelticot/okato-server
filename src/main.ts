@@ -1,7 +1,7 @@
 import { getLogger } from "./lib/utils";
 const logger = getLogger("app");
-import { crashReporter, CrashReporterTag } from "./lib/utils";
-
+import { sendTelemetryError } from "./lib/utils";
+import { TelemetryErrorTag } from "./lib/types";
 import { config } from "./config";
 import cluster from "cluster";
 import { FunctionalError } from "./lib/errors";
@@ -107,7 +107,8 @@ export const run = (): void => {
 
   logger.info(`Application name: ${config.appName}`);
   logger.info(`Application version: ${config.appVersion}`);
-  logger.info(`Environment: ${config.environmentId}`);
+  logger.info(`Environment type: ${config.envType}`);
+  logger.info(`Environment ID: ${config.envId}`);
   logger.info(`NODE_ENV: ${config.nodeEnv}`);
   logger.info(`PORT: ${config.port}`);
   logger.info(`concurrency: ${concurrency}`);
@@ -159,17 +160,16 @@ export const run = (): void => {
 
     const errorTypeTag =
       error instanceof FunctionalError
-        ? CrashReporterTag.FUNCTIONAL
-        : CrashReporterTag.TECHNICAL;
+        ? TelemetryErrorTag.FUNCTIONAL
+        : TelemetryErrorTag.TECHNICAL;
 
-    crashReporter.send(
+    sendTelemetryError(
       error,
       {},
       () => {
         handleShutdown(1);
       },
-      undefined,
-      [errorTypeTag, CrashReporterTag.UNHANDLED_EXCEPTION]
+      [errorTypeTag, TelemetryErrorTag.UNHANDLED_EXCEPTION]
     );
   });
 
@@ -187,17 +187,16 @@ export const run = (): void => {
 
     const errorTypeTag =
       error instanceof FunctionalError
-        ? CrashReporterTag.FUNCTIONAL
-        : CrashReporterTag.TECHNICAL;
+        ? TelemetryErrorTag.FUNCTIONAL
+        : TelemetryErrorTag.TECHNICAL;
 
-    crashReporter.send(
+    sendTelemetryError(
       error,
       { reason, promise },
       () => {
         handleShutdown(1);
       },
-      undefined,
-      [errorTypeTag, CrashReporterTag.UNHANDLED_REJECTION]
+      [errorTypeTag, TelemetryErrorTag.UNHANDLED_REJECTION]
     );
   });
 

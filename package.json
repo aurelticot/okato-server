@@ -1,6 +1,6 @@
 {
   "name": "okato-server",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Stock Echange trading sessions - Server side of the okato project",
   "private": true,
   "main": "build/index.js",
@@ -49,6 +49,7 @@
     "nanoid": "^3.1.18",
     "on-headers": "^1.0.2",
     "raygun": "^0.12.2",
+    "raygun-apm": "^1.4.2",
     "trace": "^3.1.1",
     "winston": "^3.3.3"
   },

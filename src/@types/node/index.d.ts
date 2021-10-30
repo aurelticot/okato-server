@@ -3,7 +3,8 @@ declare namespace NodeJS {
     PORT?: string;
     WEB_CONCURRENCY?: string;
     NODE_ENV?: "production" | "development" | "test";
-    ENVIRONMENT_ID?: string;
+    ENV_TYPE?: string;
+    ENV_ID?: string;
     LOG_LEVEL?: string;
     ENABLE_RATE_LIMITE?: "true" | "false";
     RATE_LIMIT?: string;
