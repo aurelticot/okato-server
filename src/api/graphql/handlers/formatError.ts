@@ -1,7 +1,7 @@
 import { getLogger } from "../../../lib/utils";
 const logger = getLogger("graphql");
-import { crashReporter, CrashReporterTag } from "../../../lib/utils";
-
+import { sendTelemetryError } from "../../../lib/utils";
+import { TelemetryErrorTag } from "../../../lib/types";
 import { GraphQLError, GraphQLFormattedError } from "graphql";
 import {
   FunctionalError,
@@ -25,12 +25,11 @@ export const formatError = (error: GraphQLError): GraphQLFormattedError => {
       `Functional error unhandled before GraphQL response.`,
       error.originalError
     );
-    crashReporter.send(
+    sendTelemetryError(
       new Error(`Functional error uncaught before GraphQL response.`),
       { originalError },
       () => {},
-      undefined,
-      [CrashReporterTag.FUNCTIONAL, CrashReporterTag.UNHANDLED_EXCEPTION]
+      [TelemetryErrorTag.FUNCTIONAL, TelemetryErrorTag.UNHANDLED_EXCEPTION]
     );
 
     logger.verbose(`Sending the GraphQL-fromatted error to the client.`);
@@ -41,12 +40,11 @@ export const formatError = (error: GraphQLError): GraphQLFormattedError => {
     `Technical or unkown error uncaught before GraphQL response.`,
     originalError
   );
-  crashReporter.send(
+  sendTelemetryError(
     new Error(`Technical or unkown error uncaught before GraphQL response.`),
     { originalError },
     () => {},
-    undefined,
-    [CrashReporterTag.TECHNICAL, CrashReporterTag.UNHANDLED_EXCEPTION]
+    [TelemetryErrorTag.TECHNICAL, TelemetryErrorTag.UNHANDLED_EXCEPTION]
   );
 
   logger.warn("Sending a GraphQLInternalServerError to the client.");

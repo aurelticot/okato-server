@@ -1,19 +1,26 @@
-import raygun from "raygun";
+import { Client } from "raygun";
+import { Message } from "raygun/build/types";
 import { config } from "../../config";
 
-const { appVersion, raygunAPIKey } = config;
+const { appVersion, raygunAPIKey, envType } = config;
 
-export const crashReporter = new raygun.Client().init({
+const telemetryClient = new Client().init({
   apiKey: raygunAPIKey || "local_dev",
+  tags: [`env:${envType}`],
 });
 
 if (appVersion) {
-  crashReporter.setVersion(appVersion);
+  telemetryClient.setVersion(appVersion);
 }
 
-export enum CrashReporterTag {
-  UNHANDLED_EXCEPTION = "UnhandledException",
-  UNHANDLED_REJECTION = "UnhandledRejection",
-  TECHNICAL = "Technical",
-  FUNCTIONAL = "Functional",
-}
+export const sendTelemetryError = (
+  error: Error,
+  customData?: any, // eslint-disable-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
+  callback?: ((err: Error | null) => void) | undefined,
+  tags?: string[] | undefined
+): Message => {
+  return telemetryClient.send(error, customData, callback, undefined, tags);
+};
+
+// eslint-disable-next-line @typescript-eslint/unbound-method
+export const telemetryMiddleware = telemetryClient.expressHandler;
