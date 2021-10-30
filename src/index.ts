@@ -1,5 +1,3 @@
-import "trace";
-import "clarify";
 import "raygun-apm/http";
 
 import cluster from "cluster";
