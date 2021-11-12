@@ -35,6 +35,8 @@
   },
   "homepage": "https://github.com/aurelticot/okato-server#readme",
   "dependencies": {
+    "@logtail/node": "^0.1.10",
+    "@logtail/winston": "^0.1.10",
     "apollo-server-express": "^2.19.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
