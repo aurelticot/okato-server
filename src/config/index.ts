@@ -10,12 +10,12 @@ const concurrency: number = process.env.WEB_CONCURRENCY
   ? parseInt(process.env.WEB_CONCURRENCY)
   : numCPUs;
 
-const nodeEnv: "production" | "development" | "test" =
-  process.env.NODE_ENV || "development";
+const nodeEnv = process.env.NODE_ENV || "development";
 const envType: string = process.env.ENV_TYPE || "unknown";
 const envId: string = process.env.ENV_ID || "unknown";
 
-const logLevel: string | undefined = process.env.LOG_LEVEL;
+const logLevel =
+  process.env.LOG_LEVEL || (nodeEnv === "production" ? "info" : "debug");
 
 const enableRateLimit = !(process.env.ENABLE_RATE_LIMITE === "false");
 const RATE_LIMIT_DEFAULT = 10;
@@ -35,6 +35,8 @@ const allowedDomains: RegExp[] = process.env.ALLOWED_DOMAINS
 
 const raygunAPIKey = process.env.RAYGUN_API_KEY;
 
+const logtailSourceToken = process.env.LOGTAIL_SOURCE_TOKEN;
+
 export const config = {
   appName,
   appVersion,
@@ -49,4 +51,5 @@ export const config = {
   enableCORS,
   allowedDomains,
   raygunAPIKey,
+  logtailSourceToken,
 };
