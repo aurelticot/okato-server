@@ -150,11 +150,6 @@ export const marketSpecialDays: MarketSpecialDay[] = [
     sessions: [
       {
         localStartTime: "09:30",
-        localEndTime: "13:00",
-        status: MarketStatus.OPEN,
-      },
-      {
-        localStartTime: "13:00",
         localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
@@ -167,6 +162,11 @@ export const marketSpecialDays: MarketSpecialDay[] = [
     sessions: [
       {
         localStartTime: "09:30",
+        localEndTime: "13:00",
+        status: MarketStatus.OPEN,
+      },
+      {
+        localStartTime: "13:00",
         localEndTime: "16:00",
         status: MarketStatus.CLOSE_SPECIAL,
       },
