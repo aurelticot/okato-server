@@ -12,7 +12,7 @@ export const markets: Market[] = [
     timezone: "America/New_York",
     latitude: 40.6943,
     longitude: -73.9249,
-    capitalisation: 22923,
+    capitalisation: 26000,
     website: "www.nyse.com",
   },
   {
@@ -26,7 +26,7 @@ export const markets: Market[] = [
     timezone: "America/New_York",
     latitude: 40.6943,
     longitude: -73.9249,
-    capitalisation: 10857,
+    capitalisation: 24070,
     website: "www.nasdaq.com",
   },
   {
@@ -40,7 +40,7 @@ export const markets: Market[] = [
     timezone: "Europe/London",
     latitude: 51.5072,
     longitude: -0.1275,
-    capitalisation: 4590,
+    capitalisation: 3800,
     website: "www.londonstockexchange.com",
   },
   {
@@ -54,7 +54,7 @@ export const markets: Market[] = [
     timezone: "Asia/Tokyo",
     latitude: 35.6897,
     longitude: 139.6922,
-    capitalisation: 5679,
+    capitalisation: 6680,
     website: "www.jpx.co.jp",
   },
   {
@@ -68,7 +68,7 @@ export const markets: Market[] = [
     timezone: "Asia/Shanghai",
     latitude: 31.1667,
     longitude: 121.4667,
-    capitalisation: 4026,
+    capitalisation: 7770,
     website: "english.sse.com.cn",
   },
   {
@@ -82,7 +82,7 @@ export const markets: Market[] = [
     timezone: "Asia/Hong_Kong",
     latitude: 22.305,
     longitude: 114.185,
-    capitalisation: 3936,
+    capitalisation: 5820,
     website: "www.hkex.com.hk",
   },
   {
@@ -96,7 +96,7 @@ export const markets: Market[] = [
     timezone: "Europe/Amsterdam",
     latitude: 52.35,
     longitude: 4.9166,
-    capitalisation: 3927,
+    capitalisation: 728,
     website: "www.euronext.com",
   },
   {
@@ -110,7 +110,7 @@ export const markets: Market[] = [
     timezone: "Asia/Shanghai",
     latitude: 22.535,
     longitude: 114.054,
-    capitalisation: 2504,
+    capitalisation: 5760,
     website: "www.szse.cn",
   },
   {
@@ -124,7 +124,7 @@ export const markets: Market[] = [
     timezone: "America/Toronto",
     latitude: 43.7417,
     longitude: -79.3733,
-    capitalisation: 3256,
+    capitalisation: 3320,
     website: "www.tmx.com",
   },
   {
@@ -138,7 +138,7 @@ export const markets: Market[] = [
     timezone: "Asia/Kolkata",
     latitude: 18.9667,
     longitude: 72.8333,
-    capitalisation: 2056,
+    capitalisation: 2220,
     website: "www.bseindia.com",
   },
   {
@@ -152,7 +152,7 @@ export const markets: Market[] = [
     timezone: "Australia/Sydney",
     latitude: -33.865,
     longitude: 151.2094,
-    capitalisation: 1328,
+    capitalisation: 1900,
     website: "www.asx.com.au",
   },
   {
@@ -166,7 +166,7 @@ export const markets: Market[] = [
     timezone: "Europe/Madrid",
     latitude: 40.4189,
     longitude: -3.6919,
-    capitalisation: 764,
+    capitalisation: 812,
     website: "www.bolsamadrid.es",
   },
   {
@@ -180,7 +180,7 @@ export const markets: Market[] = [
     timezone: "Pacific/Auckland",
     latitude: -41.2889,
     longitude: 174.7772,
-    capitalisation: 107,
+    capitalisation: 128,
     website: "www.nzx.com",
   },
   {
@@ -194,7 +194,7 @@ export const markets: Market[] = [
     timezone: "Asia/Singapore",
     latitude: 1.3,
     longitude: 103.8,
-    capitalisation: 583,
+    capitalisation: 677,
     website: "www.sgx.com",
   },
   {
@@ -208,7 +208,7 @@ export const markets: Market[] = [
     timezone: "Europe/Paris",
     latitude: 48.8566,
     longitude: 2.3522,
-    capitalisation: 3927,
+    capitalisation: 2090,
     website: "www.euronext.com",
   },
   {
@@ -222,7 +222,7 @@ export const markets: Market[] = [
     timezone: "Europe/Brussels",
     latitude: 50.8467,
     longitude: 4.3517,
-    capitalisation: 3927,
+    capitalisation: 414,
     website: "www.euronext.com",
   },
   {
@@ -236,7 +236,7 @@ export const markets: Market[] = [
     timezone: "Europe/Lisbon",
     latitude: 38.7452,
     longitude: -9.1604,
-    capitalisation: 3927,
+    capitalisation: 59,
     website: "www.euronext.com",
   },
   {
@@ -264,7 +264,7 @@ export const markets: Market[] = [
     timezone: "Europe/Rome",
     latitude: 45.4669,
     longitude: 9.19,
-    capitalisation: 567,
+    capitalisation: 507,
     website: "www.borsaitaliana.it",
   },
 ];
