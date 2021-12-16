@@ -1,13 +1,10 @@
 import { config } from "../../config";
 import cluster from "cluster";
 import winston, { createLogger, format, transports } from "winston";
+import { Logtail } from "@logtail/node";
+import { LogtailTransport } from "@logtail/winston";
 
 export const isProdLogger = config.nodeEnv === "production";
-const logLevel = config.logLevel
-  ? config.logLevel
-  : isProdLogger
-  ? "info"
-  : "debug";
 
 const levelPads: { [key: string]: string } = {
   error: "  ",
@@ -57,27 +54,28 @@ const formatConsoleOutput = () => {
 
 const getProdLogger = (name?: string): winston.Logger => {
   return createLogger({
-    level: logLevel,
-    transports: [
-      new transports.Console({
-        format: format.combine(
-          format.timestamp(),
-          formatProcessID(),
-          format.label({ label: name }),
-          format.metadata({
-            fillExcept: ["timestamp", "label", "level", "message", "processID"],
-          }),
-          format.errors({ stack: true }),
-          format.json()
-        ),
+    level: config.logLevel,
+    format: format.combine(
+      formatProcessID(),
+      format.label({ label: name }),
+      format.metadata({
+        fillExcept: ["label", "level", "message", "processID"],
       }),
-    ],
+      format.errors({ stack: true }),
+      format.json()
+    ),
+    transports: config.logtailSourceToken
+      ? [
+          new transports.Console(),
+          new LogtailTransport(new Logtail(config.logtailSourceToken)),
+        ]
+      : [new transports.Console()],
   });
 };
 
 const getDevLogger = (name?: string): winston.Logger => {
   return createLogger({
-    level: logLevel,
+    level: config.logLevel,
     transports: [
       new transports.Console({
         format: format.combine(
