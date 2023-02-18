@@ -1,8 +1,6 @@
 import { config } from "../../config";
 import cluster from "cluster";
 import winston, { createLogger, format, transports } from "winston";
-import { Logtail } from "@logtail/node";
-import { LogtailTransport } from "@logtail/winston";
 
 export const isProdLogger = config.nodeEnv === "production";
 
@@ -64,12 +62,7 @@ const getProdLogger = (name?: string): winston.Logger => {
       format.errors({ stack: true }),
       format.json()
     ),
-    transports: config.logtailSourceToken
-      ? [
-          new transports.Console(),
-          new LogtailTransport(new Logtail(config.logtailSourceToken)),
-        ]
-      : [new transports.Console()],
+    transports: [new transports.Console()],
   });
 };
 

@@ -1,11 +1,8 @@
 import { getLogger } from "./lib/utils";
 const logger = getLogger("app");
-import { sendTelemetryError } from "./lib/utils";
-import { TelemetryErrorTag } from "./lib/types";
 import http from "http";
 import { config } from "./config";
 import { createServer } from "./server";
-import { FunctionalError } from "./lib/errors";
 
 const exitWorker = (code: number, server: http.Server, timeout = 1000) => {
   logger.silly("worker.ts - enter #exitWorker()");
@@ -70,20 +67,6 @@ export const run = (): void => {
       `Worker process ${process.pid} got an uncaught Exception`,
       error
     );
-
-    const errorTypeTag =
-      error instanceof FunctionalError
-        ? TelemetryErrorTag.FUNCTIONAL
-        : TelemetryErrorTag.TECHNICAL;
-
-    sendTelemetryError(
-      error,
-      {},
-      () => {
-        handleShutdown(1);
-      },
-      [errorTypeTag, TelemetryErrorTag.UNHANDLED_EXCEPTION]
-    );
   });
 
   process.on("unhandledRejection", (reason, promise) => {
@@ -91,25 +74,6 @@ export const run = (): void => {
       `Worker process ${process.pid} got an unhandled Promise Rejection`,
       reason,
       promise
-    );
-
-    const error: Error =
-      reason instanceof Error
-        ? reason
-        : new Error("Unhandled Promise Rejection");
-
-    const errorTypeTag =
-      error instanceof FunctionalError
-        ? TelemetryErrorTag.FUNCTIONAL
-        : TelemetryErrorTag.TECHNICAL;
-
-    sendTelemetryError(
-      error,
-      { reason, promise },
-      () => {
-        handleShutdown(1);
-      },
-      [errorTypeTag, TelemetryErrorTag.UNHANDLED_REJECTION]
     );
   });
 
