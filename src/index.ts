@@ -1,5 +1,3 @@
-// import "raygun-apm/http";
-
 import cluster from "cluster";
 import * as main from "./main";
 import * as worker from "./worker";

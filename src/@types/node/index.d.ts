@@ -10,7 +10,5 @@ declare namespace NodeJS {
     RATE_LIMIT?: string;
     ENABLE_CORS?: "true" | "false";
     ALLOWED_DOMAINS?: string;
-    RAYGUN_API_KEY?: string;
-    LOGTAIL_SOURCE_TOKEN?: string;
   }
 }

@@ -33,10 +33,6 @@ const allowedDomains: RegExp[] = process.env.ALLOWED_DOMAINS
   ? process.env.ALLOWED_DOMAINS.split(",").map((domain) => new RegExp(domain))
   : [];
 
-const raygunAPIKey = process.env.RAYGUN_API_KEY;
-
-const logtailSourceToken = process.env.LOGTAIL_SOURCE_TOKEN;
-
 export const config = {
   appName,
   appVersion,
@@ -50,6 +46,4 @@ export const config = {
   rateLimitation,
   enableCORS,
   allowedDomains,
-  raygunAPIKey,
-  logtailSourceToken,
 };

@@ -1,10 +1,7 @@
 import { getLogger } from "./lib/utils";
 const logger = getLogger("app");
-import { sendTelemetryError } from "./lib/utils";
-import { TelemetryErrorTag } from "./lib/types";
 import { config } from "./config";
 import cluster from "cluster";
-import { FunctionalError } from "./lib/errors";
 
 const createWorker = (): cluster.Worker => {
   logger.silly("main.ts - enter createWorker()");
@@ -157,20 +154,6 @@ export const run = (): void => {
       `Main process ${process.pid} got an uncaught Exception`,
       error
     );
-
-    const errorTypeTag =
-      error instanceof FunctionalError
-        ? TelemetryErrorTag.FUNCTIONAL
-        : TelemetryErrorTag.TECHNICAL;
-
-    sendTelemetryError(
-      error,
-      {},
-      () => {
-        handleShutdown(1);
-      },
-      [errorTypeTag, TelemetryErrorTag.UNHANDLED_EXCEPTION]
-    );
   });
 
   // Handle unhandled Promise rejection
@@ -179,24 +162,6 @@ export const run = (): void => {
       `Main process ${process.pid} got an unhandled Promise rejection`,
       reason,
       promise
-    );
-    const error: Error =
-      reason instanceof Error
-        ? reason
-        : new Error("Unhandled Promise Rejection");
-
-    const errorTypeTag =
-      error instanceof FunctionalError
-        ? TelemetryErrorTag.FUNCTIONAL
-        : TelemetryErrorTag.TECHNICAL;
-
-    sendTelemetryError(
-      error,
-      { reason, promise },
-      () => {
-        handleShutdown(1);
-      },
-      [errorTypeTag, TelemetryErrorTag.UNHANDLED_REJECTION]
     );
   });
 
